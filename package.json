@@ -1,0 +1,11 @@
+{
+  "name": "settlit-webapp",
+  "version": "1.0.0",
+  "description": "A web app that is designed to streamline the process of splitting expenses among groups or individuals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Divyansh",
+  "license": "ISC"
+}
