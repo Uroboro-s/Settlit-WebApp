@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+body {
+    background-color: #FFFEF2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* main {
+    background-color: #FFFEF2;
+    margin: 40px 25px;
+    height: 100vh;
+    border: none;
+} */
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 88px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    gap: 0px;
+    font-weight: 600;
+}
+
+#settlit-logo {
+    width: 78px;
+    height: 72px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 500px;
+    margin-left: 100px;
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.50);;
+}
+
+.header-right {
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#log-in {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    color: #008080;
+    height: 45px;
+    width: 95px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#sign-up {
+    background-color: #008080;
+    color: white;
+    border: none;
+    height: 45px;
+    width: 95px;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    height: 600px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-main {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    justify-content: center;
+    gap: 40px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.hero-main-txt {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hero-main-txt p {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#up {
+    margin-left: 35px;
+}
+
+#mid {
+    text-align: center;
+}
+
+.hero-nav {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 350px;
+    gap: 40px;
+}
+
+#get-started, #learn-more {
+    height: 60px;
+    width: 150px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 17px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+#learn-more {
+    background-color: #4e9677;
+}
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    margin: 60px;
+    background-color: white;
+}
+
+.content {
+    height: 1200px;
+    width: 100%;
+}
+
