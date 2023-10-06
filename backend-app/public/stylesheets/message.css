@@ -1,0 +1,252 @@
+/* Colors 
+Primary: rgba(214, 222, 193, 0.88) #DBE2C9
+*/
+
+/*////////////////////////////////*/
+/* GENERAL STYLING */
+/*////////////////////////////////*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+}
+.space {
+  width: 1rem;
+}
+/* //////////////////////////////////// */
+body {
+  height: 100vh;
+  background-color: #d6dec1e0;
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.container--group {
+  max-width: 132rem;
+  padding: 0 3.2rem;
+  margin: 4vh auto;
+  background-color: #dbe2c9;
+  box-shadow: 0.2rem 0.2rem 5px 2px rgba(3, 3, 3, 0.4);
+  border-radius: 1.2rem;
+  border-top: 2px solid rgba(3, 3, 3, 0.19);
+  border-left: 2px solid rgba(3, 3, 3, 0.19);
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #777;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 3.6rem;
+  line-height: 1.05;
+  /* margin-bottom: 3.2rem; */
+}
+
+.heading-secondary {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.line {
+  background-color: rgba(0, 0, 0, 0.64);
+  height: 1px;
+  width: 85%;
+  align-self: center;
+}
+/* //////////////////////////////////////// */
+/* GROUP TITLE CONTAINER */
+/* //////////////////////////////////////// */
+
+.container--group-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 2.4rem 0;
+}
+
+/* //////////////////////////////////////// */
+/* MESSAGES CONTAINER */
+/* //////////////////////////////////////// */
+
+.container--group-messages {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4.8rem;
+  gap: 3.2rem;
+}
+
+.msg-img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.img-individual {
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 50%;
+  box-shadow: 0.5rem 0.5rem 2px rgba(3, 3, 3, 0.4);
+}
+
+.msg {
+  display: flex;
+}
+
+.msg-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #fafdf0;
+  width: 45rem;
+  height: auto;
+  padding: 3rem 1rem;
+  border-radius: 1.2rem;
+  box-shadow: -0.2rem 0.2rem 5px rgba(3, 3, 3, 0.4);
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.msg-text--individual {
+  display: flex;
+  width: 80%;
+  font-size: 1.8rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.msg-text--individual.paid {
+  color: #6d9785;
+}
+
+.msg-text--individual.pay {
+  color: #cb5e5d;
+}
+.msg.user {
+  /* display: flex; */
+  align-self: flex-end;
+}
+.user .msg-img {
+  order: 2;
+  margin-left: 2.4rem;
+}
+.user .msg-img .img-individual {
+  box-shadow: -0.5rem 0.5rem 2px rgba(3, 3, 3, 0.4);
+}
+
+.user .msg-text {
+  box-shadow: 0.2rem 0.2rem 5px rgba(3, 3, 3, 0.4);
+}
+
+/* //////////////////////////////////////// */
+/* REQUESTING MONEY CONTAINER*/
+/* //////////////////////////////////////// */
+
+.container--group-request {
+  margin-top: 4.8rem;
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 1.6rem;
+  justify-content: center;
+  height: 5rem;
+}
+
+.container--group-request-message {
+  background-color: #fff;
+  display: flex;
+  flex: 0.7;
+  border-radius: 5rem;
+}
+
+.container--group-message-box {
+  display: flex;
+  align-items: center;
+  border-radius: 5rem;
+  width: 100%;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.message--field {
+  padding: 2rem;
+  text-align: left;
+  flex: 1;
+  border-radius: 5rem;
+  border: 0;
+  margin: 0;
+  height: 100%;
+  border: none;
+  font-size: 3rem;
+  /* text-transform: uppercase; */
+  /* padding: 0.5rem; */
+}
+.btn-send {
+  border-radius: 5rem;
+  position: absolute;
+  height: 100%;
+  right: 0;
+  width: 12%;
+}
+.btn-request {
+  height: 100%;
+  width: 12rem;
+  border-radius: 5rem;
+  font-size: 2rem;
+}
+
+.btn-request,
+.btn-send {
+  border: none;
+  color: #6e8f81;
+  background-color: #f6f9ee;
+}
+
+.icon-send {
+  width: 70%;
+  height: 70%;
+}
+/*//////////////////////////////////*/
+/* BUTTONS */
+/*///////////////////////////////////*/
+
+.btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 4px 2px rgba(8, 8, 8, 0.19);
+  color: #eee;
+  font-weight: 500;
+  width: 4rem;
+}
+
+.msg-text--individual-btn.pay {
+  background-color: #cb5e5d;
+}
+
+.msg-text--individual-btn.paid {
+  background-color: #6d9785;
+}
