@@ -142,6 +142,10 @@ main {
     gap: 40px;
 }
 
+#hero-img {
+    margin-top: 10px;
+}
+
 #get-started, #learn-more {
     height: 60px;
     width: 220px;
