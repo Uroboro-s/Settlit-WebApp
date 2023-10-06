@@ -1,8 +1,12 @@
 const User = require('../models/user');
 const Credential = require('../models/credential');
 
+const app = require('../app');
+
 const asyncHandler = require('express-async-handler');
 const {body, validationResult} = require('express-validator');
+
+const {getUser, setUser} = require('./currentUser');
 
 //Display Sign-in Form on GET
 exports.signin_get = asyncHandler(async(req, res, next) =>{
@@ -13,10 +17,10 @@ exports.signin_get = asyncHandler(async(req, res, next) =>{
 exports.signin_post = [
     body("password")
     .trim()
-    .isLength({min: 8, max: 16})
-    .withMessage("Must contain at least 8 characters and not more than 16")
-    .isAlphanumeric()
-    .withMessage("Password has non-alphanumeric characters"),
+    .isLength({min: 8, max: 32})
+    .withMessage("Must contain at least 8 characters and not more than 16"),
+    /* .isAlphanumeric()
+    .withMessage("Password has non-alphanumeric characters"), */
     
     asyncHandler(async(req, res, next) =>{
         const errors = validationResult(req);
@@ -54,10 +58,13 @@ exports.signin_post = [
                 return ;
             }
             const user = await User.findById(credentialExists.user).exec();
-            res.render('user-home-page', {
+            console.log(setUser);
+            setUser(user._id);
+            /* res.render('user-home-page', {
                 title: "Home",
                 user: user,
-            });
+            }); */
+            res.redirect(user.url);
         }
         
     }),

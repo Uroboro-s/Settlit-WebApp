@@ -4,3 +4,12 @@ block content
   h1= title
   p Welcome to #{title} Page of #{user.name}
   
+  ul 
+    li 
+      a(href=`/users/${user.userid}/account`) My Account 
+    li 
+      a(href=`/users/${user.userid}/groups`) My Groups 
+    li 
+      a(href=`/users/${user.userid}/individuals`) My Individuals 
+    li 
+      a(href=`/users/${user.userid}/friends`) My friends

@@ -1,0 +1,82 @@
+User Information:
+
+1. Name: Raj Patel
+      •	Username: raj_patel123
+      •	Email: rajpatel23@example.com
+      •	Password: StrongPass123!
+
+2. Name: Priya Sharma
+      •	Username: priyasharma
+      •	Email: priyasharm@example.com
+      •	Password: SecurePass456!
+
+3. Name: Amit Kumar
+      •	Username: amitkumar_88
+      •	Email: amitkumar8@example.com
+      •	Password: SafePassword789!
+
+4. Name: Sneha Gupta
+      •	Username: sneha_gupta
+      •	Email: snehagupta@example.com
+      •	Password: ProtectedPass101!
+
+5. Name: Ashok Verma
+      •	Username: ashokverma
+      •	Email: ashok.verma@example.com
+      •	Password: SecretPass777!
+
+6. Name: Lata Das
+      •	Username: lata_das
+      •	Email: latadas1234@example.com
+      •	Password: HiddenPass2022!
+
+7. Name: Naveen Reddy
+      •	Username: naveenreddy1
+      •	Email: naveenreddy@example.com
+      •	Password: ConfidentialPass55!
+
+8. Name: Deepika Singh
+      •	Username: deepika_singh
+      •	Email: deepikasingh@example.com
+      •	Password: StrongSecurePass22!
+
+9. Name: Rahul Shah
+      •	Username: rahul_shah
+      •	Email: rahulshah12@example.com
+      •	Password: VerySafePassword33!
+
+10. Name: Meera Desai
+      •	Username: meera_desai
+      •	Email: meera.desai@example.com
+      •	Password: UltraSecurePass44!
+
+11. Name: Anjali Kapoor
+      •	Username: anjali_kapoor
+      •	Email: anjalikapoor@example.com
+      •	Password: SuperStrongPass55!
+
+12. Name: Saurabh Mehta
+      •	Username: saurabh_mehta
+      •	Email: saurabhmehta@example.com
+      •	Password: TopSecretPass66!
+
+Groups:
+
+1. Group 1: "Bhopal outing"
+      •	raj_patel123(admin)
+      •	priyasharma
+      •	amitkumar_88
+      •	sneha_gupta
+
+2. Group 2: "Daily Items"
+      •	raj_patel123
+      •	ashokverma(admin)
+      •	lata_das
+      •	Priyasharma
+
+3. Group 3: "Kashmir Trip"
+      •	rahul_shah(admin)
+      •	meera_desai
+      •	anjali_kapoor
+      •	naveenreddy1
+
