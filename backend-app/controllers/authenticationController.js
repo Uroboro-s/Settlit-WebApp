@@ -15,13 +15,6 @@ exports.signin_get = asyncHandler(async(req, res, next) =>{
 
 //Handle Sign-in Form on POST
 exports.signin_post = [
-    /* body("password")
-    .trim()
-    .isLength({min: 8, max: 32})
-    .withMessage("Must contain at least 8 characters and not more than 16"), */
-    /* .isAlphanumeric()
-    .withMessage("Password has non-alphanumeric characters"), */
-    
     asyncHandler(async(req, res, next) =>{
         const errors = validationResult(req);
 
@@ -60,13 +53,8 @@ exports.signin_post = [
             const user = await User.findById(credentialExists.user).exec();
             console.log(setUser);
             setUser(user._id);
-            /* res.render('user-home-page', {
-                title: "Home",
-                user: user,
-            }); */
             res.redirect(user.url);
-        }
-        
+        }    
     }),
 
 ]
@@ -92,6 +80,7 @@ exports.signup_post = [
         });
 
         const credential = new Credential({
+            user: user._id,
             email: req.body.email,
             password: req.body.password,
         });
@@ -104,6 +93,33 @@ exports.signup_post = [
                 errors: errors.array(),
             });
             return ;
+        }
+        else {
+            const userExists = await User.findOne({userid: req.body.userid}).exec();
+            if(userExists) {
+                res.render('signup', {
+                    title: "Sign Up",
+                    user: user,
+                    credential: credential,
+                    form_errors: "UserID already exists!",
+                });
+                return ;
+            }
+            const credentialExists = await Credential.findOne({email: req.body.email}).exec();
+            if(credentialExists) {
+                res.render('signup', {
+                    title: "Sign Up",
+                    user: user,
+                    credential: credential,
+                    form_errors: "Email has already been used!",
+                });
+                return ;
+            }
+            
+            await user.save();
+            await credential.save();
+            setUser(user._id);
+            res.redirect(user.url);
         }
     }),
 
