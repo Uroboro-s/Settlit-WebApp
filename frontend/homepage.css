@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    background-color: #FFFEF2;
+    display: flex;
+    justify-content: space-between;
+    height: 12%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    gap: 0px;
+    font-weight: 600;
+}
+
+#settlit-logo {
+    width: 78px;
+    height: 72px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 500px;
+    margin-left: 100px;
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.50);;
+}
+
+.header-right {
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#user-account {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    justify-content: start;
+    height: 88%;
+    width: 100%;
+}
+
+.side-bar {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+hr {
+    height: 95%;
+    align-self: center;
+}
+
+.dashboard {
+    background-color: teal;
+    height: 8%;
+    border-radius: 8px;
+}
+
+.all-expenses {
+    background-color: teal;
+    height: 8%;
+    border-radius: 8px;
+}
+
+.individuals, .groups {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+#dashboard-button, #all-expenses-button {
+    background-color: teal;
+    border: none;
+    width: 100%;
+    height: 8%;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+}
+
+.individuals-header, .groups-header {
+    background-color: teal;
+    display: flex;
+    height: 23%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+#individuals-button {
+    background-color: teal;
+    border: none;
+    height: 100%;
+    width: 48%;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    text-align: start;
+}
+
+#groups-button {
+    background-color: teal;
+    border: none;
+    height: 100%;
+    width: 35%;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    text-align: start;
+}
+
+#plus-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.individuals img, .groups img {
+    width: 25px;
+    height: 25px;
+}
+
+.groups-content, .individuals-content {
+    height: 77%;
+    width: 100%;
+}
+
+.groups-content ul, .individuals-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.groups-content li, .individuals-content li {
+    width: 100%;
+    height: 16%;
+    text-align: center;
+}
+
+.groups-content button, .individuals-content button {
+    height: 16%;
+    border: none;
+    background-color: beige;
+    font-size: 16px;
+} 
