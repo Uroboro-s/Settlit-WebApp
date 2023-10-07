@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Outfit;
+    box-sizing: border-box;
+}
+svg:hover{
+    scale: 0.95;
+}
+svg{
+    transition:all ease 0.5s
+}
+
+::placeholder {
+    color: #1F885B;
+    opacity: .5; 
+  }
+.main-body{
+    height: 100vh;
+    background: #cfdca9e0;
+    background : linear-gradient(to bottom right,#cfdca9e0, #929f6ce0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.side-bar{
+    width: 28rem;
+    height: 40rem;
+    border-radius: 0.625rem 0rem 0rem 0.625rem;
+    border-right: 1px solid #5F8B78;
+    background: #FFFDDF;
+    /* position: relative; */
+    /* left: 2.5%; */
+    transition: all ease 0.5s;
+}
+
+.side-bar svg{
+    position: relative;
+    left: 30px;
+    top: 160px;
+}
+
+.main-bar{
+    width: 36rem;
+    height: 40rem;
+    border-radius: 0rem 0.625rem 0.625rem 0rem;
+    background: #FFFEF2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    gap: 25px;
+    /* position: relative; */
+    /* left: 2.5%; */
+}
+
+/* .bar{
+    filter: blur(2px);
+} */
+
+.Welcome{
+    width: 380.366px;
+    height: 48.18px;
+    text-align: center;
+    color: #000;
+    font-size: 40px;
+    font-weight: 600;
+}
+.data-input{
+    width: 19.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    border: none;
+    color: #000000b0;
+    font-size: 1.5rem;
+    padding-left: 15px;
+    border-radius: 1rem;
+    background: #ffffffd4;
+    outline: none;
+    box-shadow: 0px 0px 18px -3px #6C8E80;
+    transition:all ease 1s ;
+}
+
+.data-input:hover{
+    scale:0.95;
+    box-shadow: 0px 0px 14px -5px #778a72;
+} 
+
+.create-acc{
+    width: 13.5rem;
+    height: 2.55rem;
+    padding-top: 3px;
+    border: none;
+    border-radius: 10px;
+    background : linear-gradient(rgba(69, 109, 92, 1), rgba(136, 184, 164, 1));
+    text-align: center;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    transition:all ease 0.7s ;
+    cursor: pointer;
+}
+.create-acc:active{
+    scale: 0.9;
+}
+
+.agree{
+    color: #739987;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+}
+
+.condition{
+    cursor: pointer;
+    color: #1F885B;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.already{
+    color: #739987;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.signin{
+    cursor: pointer;
+    color: #1F885B;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+
+/* Model */
+/* .otp-set{
+    width: 44.4375rem;
+    height: 20.9375rem;
+    z-index: 2;
+    opacity: .9;
+    scale: 0;
+    border-radius: 2.5rem;
+    border: 1px solid rgba(138, 127, 127, 0.8);
+    background: linear-gradient(100deg, #AEBE83 9.61%, #CAD2B5 47.36%, #CFDBB1 91.05%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    right: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name{
+    padding-top: 10px;
+    text-align: center;
+    color: rgb(54, 76, 46);
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+.check-number{
+    width: 26rem;
+    height: 4rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+.mail-recheck{
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.edit-icon svg{
+    cursor: pointer;
+    position: relative;
+    left: 4%;
+    transition:all ease 0.5s ;
+}
+
+
+
+.opt-taken{
+    margin-top: 10px;
+    padding-left: 8px;
+    color: rgba(0, 0, 0, 0.30);
+    font-size: 1.375rem;
+    font-weight: 600;
+    width: 18rem;
+    height: 2.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background: #FFFEF2;
+    transition:all ease 1s ;
+}  
+.opt-taken:hover{
+    scale: 0.9;
+}
+
+.submit{
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 1.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    left: 14.5%;
+    transition:all ease 1s ;
+}  
+.submit:hover{
+    scale: 0.9;
+}    
+
+.if-have{
+    width: 17.75rem;
+    height: 1.625rem;
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 1.375rem;
+    font-weight: 400;
+}
+.re-signin{
+    width: 5.125rem;
+    height: 1.5rem;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.60);
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    transition:all ease 1s ;
+
+}
+.re-signin:hover{
+    scale: 0.9;
+} */
