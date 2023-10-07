@@ -15,10 +15,10 @@ exports.signin_get = asyncHandler(async(req, res, next) =>{
 
 //Handle Sign-in Form on POST
 exports.signin_post = [
-    body("password")
+    /* body("password")
     .trim()
     .isLength({min: 8, max: 32})
-    .withMessage("Must contain at least 8 characters and not more than 16"),
+    .withMessage("Must contain at least 8 characters and not more than 16"), */
     /* .isAlphanumeric()
     .withMessage("Password has non-alphanumeric characters"), */
     
@@ -71,6 +71,40 @@ exports.signin_post = [
 
 ]
 
-/* exports.signin_post = asyncHandler(async(req, res, next) =>{
-    res.render('signin', {title: "Sign In"});
-}); */
+//Display Sign-Up form on GET
+exports.signup_get = asyncHandler(async(req, res, next) =>{
+    res.render('signup', {title: "Sign up"});
+});
+
+//Handle Sign-Up form on POST4
+exports.signup_post = [
+    body("password")
+    .trim()
+    .isLength({min: 8, max: 32})
+    .withMessage("Must contain at least 8 characters and not more than 32"),
+
+    asyncHandler(async(req, res, next) =>{
+        const errors = validationResult(req);
+        console.log("here now");
+        const user = new User({
+            userid: req.body.userid,
+            name: req.body.name,
+        });
+
+        const credential = new Credential({
+            email: req.body.email,
+            password: req.body.password,
+        });
+
+        if(!errors.isEmpty()) {
+            res.render('signup', {
+                title: "Sign Up",
+                user: user,
+                credential: credential,
+                errors: errors.array(),
+            });
+            return ;
+        }
+    }),
+
+];
