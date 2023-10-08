@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="AddGroup.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="/frontend/images/settlit-logo.png" alt="settleit logo" id="settlit-logo">
+                Settlit
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-right">
+            <button id="user-account">
+                <img src="images/icons8-user-default-64.png" alt="User Icon" width="60px" height="60px">
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="side-bar">
+            <a href="" id="dashboard-button">Dashboard</a>
+            <a href="" id="all-expenses-button">All Expenses</a>
+            <div class="individuals">
+                <a href="" id="individuals-button">Individuals <img src="images/plus.png" alt="plus icon" id="plus-icon"></a>
+                <div class="individuals-content">
+                    <ul>
+                        <li><a href="" id="individual-1">Individual 1</a></li>
+                        <li><a href="" id="individual-2">Individual 2</a></li>
+                        <li><a href="" id="individual-3">Individual 3</a></li>
+                        <li><a href="" id="individual-4">Individual 4</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="groups">
+                <a href="" id="groups-button">Groups <img src="images/plus.png" alt="plus icon" id="plus-icon"></a>
+                <div class="groups-content">
+                    <ul>
+                        <li><a href="" id="group-1">Group 1</a></li>
+                        <li><a href="" id="group-2">Group 2</a></li>
+                        <li><a href="" id="group-3">Group 3</a></li>
+                        <li><a href="" id="group-4">Group 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+            <div class="content">
+                <div class="search-box">
+                    <div class="add-button">
+                        Add Button
+                    </div>
+                    <div class="groupname-box">
+                        <div class="groupname"> <a href="" class="groupname-text" id="group1">Group 1 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group2">Group 2 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group3">Group 3 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group4">Group 4 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group5">Group 5 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group6">Group 6 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group7">Group 7 </a> </div>
+                        <div class="groupname"> <a href="" class="groupname-text" id="group8">Group 8 </a> </div>
+                    </div>
+                </div>
+                
+                <div class="new-group ">
+                    <form >
+                    <div class=" for-gap add-group-name">
+                        <label for="Group Name">Group Name : </label>
+                        <input class="get-data" type="text" placeholder="Group Name">
+                    </div>
+                    <div class=" for-gap add-member">
+                        <label for="Add Member">Member : </label>
+                        <input class="get-data" type="text" placeholder="Member 1"><br />
+                        <input class="get-data for-member" type="text" placeholder="Member 2"><br />
+                        <input class="get-data for-member" type="text" placeholder="Member 3"><br />
+                    </div>
+                    <div class=" for-gap add-Discription">
+                        <label for="Group Name">Discription : </label>
+                        <input class="get-data" type="text" placeholder="Discription">
+                    </div>
+                    <div class=" for-gap buttons">
+                        <div class="cancel boxji">cancel</div>
+                        <div class="Create boxji">Create</div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="AddGroup.js"></script>
+</body>
+</html>

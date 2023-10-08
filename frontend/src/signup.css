@@ -4,6 +4,9 @@
     font-family: Outfit;
     box-sizing: border-box;
 }
+svg:hover{
+    scale: 0.95;
+}
 svg{
     transition:all ease 0.5s
 }
@@ -22,12 +25,12 @@ svg{
 }
 .side-bar{
     width: 28rem;
-    height: 48rem;
+    height: 40rem;
     border-radius: 0.625rem 0rem 0rem 0.625rem;
     border-right: 1px solid #5F8B78;
     background: #FFFDDF;
-    position: relative;
-    left: 18.5%;
+    /* position: relative; */
+    /* left: 2.5%; */
     transition: all ease 0.5s;
 }
 
@@ -39,7 +42,7 @@ svg{
 
 .main-bar{
     width: 36rem;
-    height: 48rem;
+    height: 40rem;
     border-radius: 0rem 0.625rem 0.625rem 0rem;
     background: #FFFEF2;
     display: flex;
@@ -47,8 +50,8 @@ svg{
     justify-content: center;
     align-items: center ;
     gap: 25px;
-    position: relative;
-    left: 18.5%;
+    /* position: relative; */
+    /* left: 2.5%; */
 }
 
 /* .bar{
@@ -130,7 +133,7 @@ svg{
 
 
 /* Model */
-.otp-set{
+ .otp-set{
     width: 44.4375rem;
     height: 20.9375rem;
     z-index: 2;
@@ -174,9 +177,7 @@ svg{
     left: 4%;
     transition:all ease 0.5s ;
 }
-svg:hover{
-    scale: 0.95;
-}
+
 
 
 .opt-taken{
@@ -231,4 +232,4 @@ svg:hover{
 }
 .re-signin:hover{
     scale: 0.9;
-}
+} 
