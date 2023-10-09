@@ -18,7 +18,7 @@ body {
 
 header {
     background-color: #FFFEF2;
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     height: 88px;
 }

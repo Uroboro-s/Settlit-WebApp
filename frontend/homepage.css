@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: beige;
+    background-color: #77bfa3;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #FFFEF2;
+    background-color: #dde7c7;
     display: flex;
     justify-content: space-between;
     height: 12%;
@@ -70,6 +70,7 @@ li {
     height: 60px;
     border: none;
     border-radius: 50%;
+    filter: grayscale(100%);
 }
 
 main {
@@ -81,70 +82,71 @@ main {
 
 .side-bar {
     height: 100%;
-    width: 20%;
+    width: 17%;
     display: flex;
     flex-direction: column;
     padding-top: 1%;
-    padding-left: 2%;
+    padding-left: 3%;
     padding-right: 2%;
-    justify-content: space-evenly;
+    justify-content: start;
     gap: 14px;
+    background-color: #bfd8bd;
 }
 
-hr {
+/* hr {
     height: 95%;
     align-self: center;
-}
+} */
 
 .individuals, .groups {
     height: 35%;
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
-    border: 1px solid black;
 }
 
-#dashboard-button, #all-expenses-button {
-    background-color: rgba(24, 150, 150, 0.696);
-    border: none;
+.dashboard-button, .all-expenses-button {   
     width: 100%;
     height: 6%;
     font-size: 18px;
-    color: black;
-    border-radius: 8px;
-    text-align: center;
+    color: rgba(0, 0, 0, 0.827);
+    text-align: left;
     padding: 5px 0px;
     text-decoration: none;
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
 }
 
-#individuals-button, #groups-button {
-    background-color: rgba(24, 150, 150, 0.696);
-    border: none;
+.side-bar a:hover {
+    color: black;
+}
+
+
+.side-bar-icon {
+    width: 18px;
+    height: 18px;
+}
+
+
+.individuals-button, .groups-button {
     height: 18%;
     width: 100%;
     font-size: 18px;
-    color: black;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    color: rgba(0, 0, 0, 0.827);;
     text-decoration: none;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 12px;
-    border-bottom: 1px solid black;
+    font-weight: 500;
 }
 
 #plus-icon {
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
     background-color: white;
     border-radius: 50%;
-}
-
-.individuals img, .groups img {
-    width: 25px;
-    height: 25px;
 }
 
 .groups-content, .individuals-content {
@@ -165,14 +167,16 @@ hr {
 .groups-content li, .individuals-content li {
     width: 100%;
     height: 12%;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    gap: 5px;
 }
 
 .groups-content a, .individuals-content a {
     height: 16%;
     font-size: 16px;
     text-decoration: none;
-    color: black;
+    color: rgba(0, 0, 0, 0.718);
 }
 
 
