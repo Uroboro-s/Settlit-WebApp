@@ -1,8 +1,6 @@
 const User = require('../models/user');
 const Credential = require('../models/credential');
 
-const app = require('../app');
-
 const asyncHandler = require('express-async-handler');
 const {body, validationResult} = require('express-validator');
 

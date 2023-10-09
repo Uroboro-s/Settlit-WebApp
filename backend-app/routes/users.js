@@ -2,6 +2,7 @@ const  express = require('express');
 const  router = express.Router();
 
 const userController = require('../controllers/userController');
+const groupController = require('../controllers/groupController');
 
 /* GET users listing which should'nt be possible*/
 router.get('/', function(req, res, next) {
@@ -25,6 +26,17 @@ router.get('/:user_id/friends', userController.user_get_myfriends);
 
 //GET the 'My Individuals' page for user
 router.get('/:user_id/individuals', userController.user_get_myindividuals);
+
+
+
+
+//Group Routes below**
+
+//POST the group-create form
+router.post('/:user_id/groups/group/create', groupController.group_create_post);
+
+//GET the group message window
+router.get('/:user_id/groups/group/:group_id', groupController.group_message_window_get);
 
 
 

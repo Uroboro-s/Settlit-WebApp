@@ -1,131 +1,129 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+extends user-dashboard 
+
+block content
   link(rel='preconnect' href='https://fonts.googleapis.com')
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap' rel='stylesheet')
-  link(rel='stylesheet' href='src/css/message.css')
-  title SetLit
-section.container--group
-  .container--group-title
-    h1.heading-primary God's Chosen Virgins
-    span.space
-    svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
-      path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
-  hr.line
-  .container--group-messages
-    .msg.friend
-      .msg-img
-        img.img-individual(src='src/img/img-2.jpeg')
-      .msg-text
-        .msg-text--description.heading-secondary
-          | Pizza
-          svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
-            path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
-        .msg-text--individual.paid
-          .msg-text--individual-name Divyansh
-          .msg-text--individual-money
-          button.msg-text--individual-btn.paid.btn paid
-        hr.line
-        .msg-text--individual.pay
-          .msg-text--individual-name Viral
-          .msg-text--individual-money &#x20B9;240
-          button.msg-text--individual-btn.pay.btn pay
-        hr.line
-        .msg-text--individual.pay
-          .msg-text--individual-name Ritvik
-          .msg-text--individual-money &#x20B9;200
-          button.msg-text--individual-btn.pay.btn pay
-        hr.line
-        .msg-text--individual.pay
-          .msg-text--individual-name Harsh
-          .msg-text--individual-money &#x20B9;250
-          button.msg-text--individual-btn.pay.btn pay
-        hr.line
-    .msg.user
-      .msg-img
-        img.img-individual(src='src/img/img-1.jpeg')
-      .msg-text
-        .msg-text--description.heading-secondary
-          | Ice-Cream
-          svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
-            path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
-        .msg-text--individual.paid
-          .msg-text--individual-name Divyansh
-          .msg-text--individual-money
-          button.msg-text--individual-btn.paid.btn paid
-        hr.line
-        .msg-text--individual.paid
-          .msg-text--individual-name Jai
-          .msg-text--individual-money
-          button.msg-text--individual-btn.paid.btn paid
-        hr.line
-        .msg-text--individual.paid
-          .msg-text--individual-name Ritvik
-          .msg-text--individual-money
-          button.msg-text--individual-btn.paid.btn.btn paid
-        hr.line
-        .msg-text--individual.paid
-          .msg-text--individual-name Harsh
-          .msg-text--individual-money
-          button.msg-text--individual-btn.paid.btn paid
-        hr.line
-    //
-      <div class="msg user">
-      <div class="msg-img"></div>
-      <div class="msg-text">
-      <div class="msg-text--description heading-secondary">
-      Under-Belly
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="w-6 h-6 icon"
-      >
-      <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-      />
-      </svg>
-      </div>
-      <div class="msg-text--individual paid">
-      <div class="msg-text--individual-name">Harsh</div>
-      <div class="msg-text--individual-money"></div>
-      <button class="msg-text--individual-btn paid btn">paid</button>
-      </div>
-      <hr class="line"/>
-      <div class="msg-text--individual paid">
-      <div class="msg-text--individual-name">Viral</div>
-      <div class="msg-text--individual-money">₹150</div>
-      <button class="msg-text--individual-btn pay btn">pay</button>
-      </div>
-      <hr class="line"/>
-      <div class="msg-text--individual paid">
-      <div class="msg-text--individual-name">Ritvik</div>
-      <div class="msg-text--individual-money">₹200</div>
-      <button class="msg-text--individual-btn pay btn">pay</button>
-      </div>
-      <hr class="line"/>
-      <div class="msg-text--individual paid">
-      <div class="msg-text--individual-name">Jai</div>
-      <div class="msg-text--individual-money"></div>
-      <button class="msg-text--individual-btn pay btn">paid</button>
-      </div>
-      <hr class="line"/>
-      </div>
-      </div>
-  .container--group-request
-    .container--group-request-message
-      form.container--group-message-box
-        input.message--field(type='text' placeholder='Enter The Amount to Split')
-        button.btn-send
-          ion-icon.icon-send(name='paper-plane-outline')
-    button.btn-request
-      span.message-box &#x20B9; Request
-script(type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
-script(nomodule='' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')
+  link(rel='stylesheet' href='/stylesheets/message.css')
+  
+
+  section.container--group
+    .container--group-title
+      h1.heading-primary Group Name
+      span.space
+      svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
+        path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
+    hr.line
+    .container--group-messages
+      .msg.friend
+        .msg-img.image-box
+          img.img-individual.image(src='src/img/ico_fb.png')
+        .msg-text
+          .msg-text--description.heading-secondary
+            | Item 1
+            svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
+              path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 1
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.pay
+            .msg-text--individual-name Individual 2
+            .msg-text--individual-money &#x20B9;240
+            button.msg-text--individual-btn.pay.btn pay
+          hr.line
+          .msg-text--individual.pay
+            .msg-text--individual-name Individual 3
+            .msg-text--individual-money &#x20B9;200
+            button.msg-text--individual-btn.pay.btn pay
+          hr.line
+          .msg-text--individual.pay
+            .msg-text--individual-name Individual 4
+            .msg-text--individual-money &#x20B9;250
+            button.msg-text--individual-btn.pay.btn pay
+          hr.line
+      .msg.user
+        .msg-img.image-box
+          img.img-individual.image(src='src/img/ico_instagram.png')
+        .msg-text
+          .msg-text--description.heading-secondary
+            | Item 2
+            svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
+              path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 1
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 2
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 3
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 4
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+      .msg.user
+        .msg-img.image-box
+          img.img-individual.image(src='src/img/ico_twitter.png')
+        .msg-text
+          .msg-text--description.heading-secondary
+            | Item 3
+            svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
+              path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 1
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 2
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 3
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 4
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+    .container--group-request
+      .container--group-request-message
+        form.container--group-message-box
+          input.message--field(type='text' placeholder='Enter The Amount to Split')
+          button.btn-send
+            ion-icon.icon-send(name='paper-plane-outline')
+      button.btn-request
+        span.message-box &#x20B9; Request
+  .modal.hidden
+    .modal-group Group Name
+    form.modal-input
+      input.modal-description(type='description--field' placeholder='Description')
+      .modal-individual-input
+        input.input--field(type='text' placeholder='Individual-name')
+        input.input--field(type='text' placeholder='Individual-money')
+      .modal-individual-input
+        input.input--field(type='text' placeholder='Individual-name')
+        input.input--field(type='text' placeholder='Individual-money')
+      .modal-individual-input
+        input.input--field(type='text' placeholder='Individual-name')
+        input.input--field(type='text' placeholder='Individual-money')
+      .modal-individual-input
+        input.input--field(type='text' placeholder='Individual-name')
+        input.input--field(type='text' placeholder='Individual-money')
+    button.btn-modal
+      span.message-box Request
+  script(type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
+  script(nomodule='' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')

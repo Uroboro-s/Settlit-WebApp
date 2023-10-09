@@ -9,4 +9,8 @@ const GroupSchema = new Schema({
     messages: [{type: Schema.Types.ObjectId, ref: "Message"}],
 });
 
+
+GroupSchema.virtual('url').get(function() {
+    return `/users/:user_id/groups/group/:group_id`;
+})
 module.exports = mongoose.model("Group", GroupSchema);

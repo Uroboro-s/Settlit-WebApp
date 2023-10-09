@@ -1,0 +1,58 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Home Page
+  link(rel='stylesheet' href='/stylesheets/user-dashboard.css')
+    
+header
+  .header-left
+    .logo
+      img#settlit-logo(src='/images/settlit-logo.png' alt='settleit logo')
+      |                 Settlit
+    .nav
+      ul
+        li
+          a(href='') Home
+        li
+          a(href='') About us
+        li
+          a(href='') Blog
+  .header-right
+    button#user-account
+      img(src='/images/icons8-user-default-64.png' alt='User Icon' width='60px' height='60px')
+main
+  .side-bar
+    a#dashboard-button(href='') Dashboard
+    a#all-expenses-button(href='') All Expenses
+    .individuals
+      a#individuals-button(href='')
+        | Individuals 
+        img#plus-icon(src='/images/plus.png' alt='plus icon')
+      .individuals-content
+        ul
+          li
+            a#individual-1(href='') Individual 1
+          li
+            a#individual-2(href='') Individual 2
+          li
+            a#individual-3(href='') Individual 3
+          li
+            a#individual-4(href='') Individual 4
+    .groups
+      a#groups-button(href=`/users/${user.userid}/groups`)
+        | Groups 
+        img#plus-icon(src='/images/plus.png' alt='plus icon')
+      .groups-content
+        ul
+          li
+            a#group-1(href='') Group 1
+          li
+            a#group-2(href='') Group 2
+          li
+            a#group-3(href='') Group 3
+          li
+            a#group-4(href='') Group 4
+  hr
+  .content
+    block content

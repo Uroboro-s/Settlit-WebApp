@@ -62,7 +62,7 @@ svg:hover{
 .data-input{
     width: 18.5rem;
     height: 3rem;
-    cursor: pointer;
+    cursor: text;
     border: none;
     color: #000000b0;
     font-size: 1.5rem;
@@ -93,6 +93,7 @@ svg:hover{
     font-size: 20px;
     font-weight: 600;
     transition: all ease 0.7s;
+    cursor: pointer;
 }
 .login:active{
     scale: 0.9;

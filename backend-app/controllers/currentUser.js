@@ -1,11 +1,11 @@
 let activeUser;
 
 
-function getUser() {
+async function getUser() {
     return activeUser;
 }
 
-function setUser(user) {
+async function setUser(user) {
     activeUser = user;
 }
 
