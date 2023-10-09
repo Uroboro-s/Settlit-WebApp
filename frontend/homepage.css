@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #77bfa3;
+    background-color:  #bfd8bd;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #dde7c7;
+    background-color: #FFFEF2;
     display: flex;
     justify-content: space-between;
     height: 12%;
@@ -90,7 +90,7 @@ main {
     padding-right: 2%;
     justify-content: start;
     gap: 14px;
-    background-color: #bfd8bd;
+    background-color: beige;
 }
 
 /* hr {
@@ -127,6 +127,15 @@ main {
     width: 18px;
     height: 18px;
 }
+/* .individuals-content .side-bar-icon{
+    width: 22px;
+    height: 22px;
+} */
+.groups-content .side-bar-icon{
+    padding-right: 2px;
+    width: 19px;
+    height: 17px;
+}
 
 
 .individuals-button, .groups-button {
@@ -145,8 +154,9 @@ main {
 #plus-icon {
     width: 18px;
     height: 18px;
-    background-color: white;
-    border-radius: 50%;
+    /* background-color: rgb(236, 228, 228); */
+    
+    
 }
 
 .groups-content, .individuals-content {
