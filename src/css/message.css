@@ -9,21 +9,20 @@ html {
 }
 
 .icon {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #333;
   color: #fff;
   border: none;
   padding: 0;
   border-radius: 50%;
 }
-.space {
+/* .space {
   width: 1rem;
-}
+} */
 
 body {
   background-color: #fffef2;
-  font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
   height: 100vh;
@@ -269,6 +268,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.8rem;
   margin-bottom: 1.2rem;
   padding: 1.2rem 2.4rem 0;
 }
@@ -382,6 +382,15 @@ hr {
   /* text-transform: uppercase; */
   /* padding: 0.5rem; */
 }
+
+.message--field::placeholder {
+  color: #555;
+}
+.message--field:focus {
+  /* border: 0px; */
+  outline: none;
+}
+
 .btn-send {
   border-radius: 5rem;
   position: absolute;
@@ -448,7 +457,7 @@ hr {
   box-shadow: 0px 0px 5rem rgba(0, 0, 0, 0.5);
 }
 .modal.hidden {
-  display: none;
+  /* display: none; */
 }
 .modal-group {
   height: 4rem;
@@ -464,8 +473,11 @@ hr {
   padding: 2rem;
   height: 5rem;
   border-radius: 5rem;
+  outline: none;
 }
-
+.description--field:focus {
+  outline: none;
+}
 .modal-input {
   display: flex;
   flex-direction: column;
@@ -485,7 +497,9 @@ hr {
   background-color: #f8fafc;
   border-radius: 5rem;
 }
-
+.input--field:focus {
+  outline: none;
+}
 .btn-modal {
   width: 10rem;
   background-color: #334155;
