@@ -9,7 +9,7 @@ block content
 
   section.container--group
     .container--group-title
-      h1.heading-primary Group Name
+      h1.heading-primary #{group.name}
       span.space
       svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
         path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
@@ -17,7 +17,7 @@ block content
     .container--group-messages
       .msg.friend
         .msg-img.image-box
-          img.img-individual.image(src='src/img/ico_fb.png')
+          img.img-individual.image(src='/images/ico_fb.png')
         .msg-text
           .msg-text--description.heading-secondary
             | Item 1
@@ -45,7 +45,7 @@ block content
           hr.line
       .msg.user
         .msg-img.image-box
-          img.img-individual.image(src='src/img/ico_instagram.png')
+          img.img-individual.image(src='/images/ico_instagram.png')
         .msg-text
           .msg-text--description.heading-secondary
             | Item 2
@@ -73,10 +73,39 @@ block content
           hr.line
       .msg.user
         .msg-img.image-box
-          img.img-individual.image(src='src/img/ico_twitter.png')
+          img.img-individual.image(src='/images/ico_twitter.png')
         .msg-text
           .msg-text--description.heading-secondary
             | Item 3
+            svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
+              path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 1
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 2
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 3
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn.btn paid
+          hr.line
+          .msg-text--individual.paid
+            .msg-text--individual-name Individual 4
+            .msg-text--individual-money
+            button.msg-text--individual-btn.paid.btn paid
+          hr.line
+      each message in group.messages 
+        .msg.user
+        .msg-img.image-box
+          img.img-individual.image(src='/images/ico_twitter.png')
+        .msg-text
+          .msg-text--description.heading-secondary
+            | #{message.subject}
             svg.icon(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke-width='1.5' stroke='currentColor')
               path(stroke-linecap='round' stroke-linejoin='round' d='M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z')
           .msg-text--individual.paid
@@ -109,21 +138,30 @@ block content
         span.message-box &#x20B9; Request
   .modal.hidden
     .modal-group Group Name
-    form.modal-input
-      input.modal-description(type='description--field' placeholder='Description')
-      .modal-individual-input
+    form.modal-input(method="POST" action=`/users/${user.userid}/groups/group/${group._id}/createmsg`)
+      input.modal-description(type='description--field' placeholder='Description' name="subject" required="true")
+      
+      each member in group.members 
+        .modal-individual-input
+          span(for="members") #{member.name} :
+          input.input--field(type="number" placeholder="0" name="money[]")
+        //input.input--field(type='text' placeholder='Individual-name')
+        //input.input--field(type='text' placeholder='Individual-money')
+      //.modal-individual-input
         input.input--field(type='text' placeholder='Individual-name')
         input.input--field(type='text' placeholder='Individual-money')
-      .modal-individual-input
+      //.modal-individual-input
         input.input--field(type='text' placeholder='Individual-name')
         input.input--field(type='text' placeholder='Individual-money')
-      .modal-individual-input
+      //.modal-individual-input
         input.input--field(type='text' placeholder='Individual-name')
         input.input--field(type='text' placeholder='Individual-money')
-      .modal-individual-input
-        input.input--field(type='text' placeholder='Individual-name')
-        input.input--field(type='text' placeholder='Individual-money')
-    button.btn-modal
-      span.message-box Request
+      
+      button.btn-modal(type = "submit")
+        span.message-box Request
+    button.btn-cancel 
+      span.message-box Cancel
+  
+  script(src='/javascripts/request.js')
   script(type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
   script(nomodule='' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')

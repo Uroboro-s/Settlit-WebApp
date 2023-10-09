@@ -4,7 +4,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Home Page
   link(rel='stylesheet' href='/stylesheets/user-dashboard.css')
-    
+  
 header
   .header-left
     .logo
@@ -21,6 +21,15 @@ header
   .header-right
     button#user-account
       img(src='/images/icons8-user-default-64.png' alt='User Icon' width='60px' height='60px')
+    .modal-window
+      ul.modal-list
+        li
+          a.modal-link(href='#') Account
+        li
+          a.modal-link(href='#') Settings
+        li
+          a.modal-link.logout(href='#') Log out
+    script(src="/javascripts/user-dashboard.js")
 main
   .side-bar
     a#dashboard-button(href='') Dashboard

@@ -2,7 +2,6 @@ const Group = require('../models/group');
 const User = require('../models/user');
 
 const asyncHandler = require('express-async-handler');
-
 const {body, validationResult} = require('express-validator');
 
 const {getUser} = require('../controllers/currentUser');
@@ -70,7 +69,8 @@ exports.group_message_window_get = asyncHandler(async(req, res, next) =>{
     const currentUserId = await getUser();
     const user = await User.findById(currentUserId).exec();
 
-    const group = await Group.findById(req.params.group_id).exec();
+    const group = await Group.findById(req.params.group_id).populate("members messages").exec();
+
     console.log(group);
     res.render('group-message-window', {
         title: 'Message Window',

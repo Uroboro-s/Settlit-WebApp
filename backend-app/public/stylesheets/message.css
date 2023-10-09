@@ -250,7 +250,7 @@ hr {
 }
 
 .container--group {
-  width: 70%;
+  width: 100%;
   height: 100%;
   padding: 0 3.2rem;
   margin: 0 5rem;
@@ -447,9 +447,9 @@ hr {
   padding: 2rem;
   box-shadow: 0px 0px 5rem rgba(0, 0, 0, 0.5);
 }
-.modal.hidden {
+.hidden {
   display: none;
-}
+} 
 .modal-group {
   height: 4rem;
   font-size: 3.2rem;

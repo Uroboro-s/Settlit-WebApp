@@ -175,4 +175,41 @@ hr {
     color: black;
 }
 
+.header-right {
+    position: relative;
+  }
+  .modal-window {
+    width: 150px;
+    position: absolute;
+    top: 100%;
+    background-color: rgba(24, 150, 150, 0.696);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    transform: translateX(75%);
+    transition: all 1s ease-in;
+    display: none;
+    z-index: -1;
+  }
+  .modal-window.open {
+    transform: translateX(0%);
+    display: block;
+  }
+  .modal-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal-link {
+    color: snow;
+    text-decoration: none;
+  }
+  .modal-link:hover {
+    color: #fff;
+  }
+  .logout {
+    color: #ef4444;
+  } 
+
 

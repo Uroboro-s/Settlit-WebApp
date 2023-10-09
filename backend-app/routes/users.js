@@ -3,6 +3,7 @@ const  router = express.Router();
 
 const userController = require('../controllers/userController');
 const groupController = require('../controllers/groupController');
+const messageController = require('../controllers/messageController');
 
 /* GET users listing which should'nt be possible*/
 router.get('/', function(req, res, next) {
@@ -37,6 +38,9 @@ router.post('/:user_id/groups/group/create', groupController.group_create_post);
 
 //GET the group message window
 router.get('/:user_id/groups/group/:group_id', groupController.group_message_window_get);
+
+//POST the message-create form 
+router.post('/:user_id/groups/group/:group_id/createmsg', messageController.message_create_post);
 
 
 
