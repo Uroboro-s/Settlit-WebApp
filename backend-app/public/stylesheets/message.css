@@ -305,7 +305,7 @@ hr {
   align-items: center;
   gap: 0.6rem;
   background-color: #fafdf0;
-  width: 45rem;
+  width: 50rem;
   height: auto;
   padding: 3rem 1rem;
   border-radius: 1.2rem;
@@ -415,7 +415,7 @@ hr {
   box-shadow: 0 0 4px 2px rgba(8, 8, 8, 0.19);
   color: #eee;
   font-weight: 500;
-  width: 4rem;
+  width: 10rem;
 }
 
 .msg-text--individual-btn.pay {

@@ -32,36 +32,56 @@ header
     script(src="/javascripts/user-dashboard.js")
 main
   .side-bar
-    a#dashboard-button(href='') Dashboard
-    a#all-expenses-button(href='') All Expenses
+    a.dashboard-button(href='') 
+      img(src="/images/dashboard.png" alt ="" class ="side-bar-icon") 
+      | Dashboard
+    a.all-expenses-button(href='') 
+      img(src="/images/money.png" alt ="" class ="side-bar-icon") 
+      | All Expenses
     .individuals
-      a#individuals-button(href='')
+      a.individuals-button(href='')
         | Individuals 
         img#plus-icon(src='/images/plus.png' alt='plus icon')
       .individuals-content
         ul
           li
-            a#individual-1(href='') Individual 1
+            a#individual-1(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon") 
+              | Individual 1
           li
-            a#individual-2(href='') Individual 2
+            a#individual-2(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
+              | Individual 2
           li
-            a#individual-3(href='') Individual 3
+            a#individual-3(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
+              | Individual 3
           li
-            a#individual-4(href='') Individual 4
+            a#individual-4(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
+              | Individual 4
     .groups
-      a#groups-button(href=`/users/${user.userid}/groups`)
+      a.groups-button(href=`/users/${user.userid}/groups`)
         | Groups 
         img#plus-icon(src='/images/plus.png' alt='plus icon')
       .groups-content
         ul
           li
-            a#group-1(href='') Group 1
+            a#group-1(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 1
           li
-            a#group-2(href='') Group 2
+            a#group-2(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 2
           li
-            a#group-3(href='') Group 3
+            a#group-3(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 3
           li
-            a#group-4(href='') Group 4
+            a#group-4(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 4
   hr
   .content
     block content
