@@ -1,5 +1,7 @@
 const Group = require('../models/group');
 const User = require('../models/user');
+const Message = require('../models/message');
+const Transaction = require('../models/transaction');
 
 const asyncHandler = require('express-async-handler');
 const {body, validationResult} = require('express-validator');
@@ -55,10 +57,8 @@ exports.group_create_post = [
             if(groupMembers.includes(null)) {
                 res.send("Invalid userid");
             }
-            console.log(group);
-
             await group.save();
-            res.redirect(group.url);
+            res.redirect(`/users/${currentUser.userid}/groups/group/${group._id}`);
         }
     })
 ]
@@ -70,11 +70,24 @@ exports.group_message_window_get = asyncHandler(async(req, res, next) =>{
     const user = await User.findById(currentUserId).exec();
 
     const group = await Group.findById(req.params.group_id).populate("members messages").exec();
+    const allMessages = group.messages;
 
-    console.log(group);
+    const allTransactions = [];
+    for(const loop_variable of allMessages) {
+        
+        const message = await Message.findById(loop_variable._id).populate("transactions").exec();
+        const single_message_transactions = [];
+        for(const inner_loop_variable of message.transactions) {
+            const transaction = await Transaction.findById(inner_loop_variable._id).populate("reciever status amount").exec();
+            single_message_transactions.push(transaction);
+        }
+        allTransactions.push(single_message_transactions);
+    }
+
     res.render('group-message-window', {
         title: 'Message Window',
         user: user,
         group,
+        allTransactions: allTransactions,
     });
 });
