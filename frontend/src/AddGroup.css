@@ -85,6 +85,8 @@ main {
 }
 
 .side-bar {
+    /* background: #abc19d;
+    opacity: .9; */
     height: 100%;
     width: 20%;
     display: flex;
@@ -229,16 +231,17 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     gap: 15px;
     position: relative;
-    right: 20%;
+    right: 3%;
     transition: all ease 0.7s;
 }
 
 .groupname-text{
     color: #0000006e;
-    font-size: 36px;
+    text-align: center;
+    font-size: 32px;
     font-weight: 400;
     text-decoration: none;
 }
@@ -247,7 +250,7 @@ hr {
     transition: all ease 0.7s;
 }
 .groupname:hover{
-    scale: 0.9;
+    scale: 1.05;
 }
 .boxji{
     transition: all ease .9s;
@@ -255,6 +258,11 @@ hr {
 .boxji:hover{
     scale: 0.9;
     cursor: pointer;
+}
+ /* style to button */
+button{
+    border: none;
+    font-size: 24px;
 }
 .new-group{
     width: 40rem;
@@ -264,7 +272,7 @@ hr {
     scale: 0;
     border-radius: 2.5rem;
     border: 1px solid rgba(138, 127, 127, 0.8);
-    background: #ffffff8e ;
+    background: #eff0ee ;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: relative;
     right: 20%;
@@ -274,8 +282,6 @@ hr {
     align-items: center;
     gap: 10px;
 }
-
-
 
 .for-gap{
     padding-bottom: 10%;
@@ -296,12 +302,14 @@ hr {
     font-size: 1rem;
     padding-left: 15px;
     border-radius: .25rem;
-    background: #ffffffd4;
+    background: #ffffff;
     outline: none;
     box-shadow: 0px 0px 18px -3px #6C8E80;
     transition:all ease 1s ;
 }
-
+.add-group-name{
+    padding-top: 10%;
+}
 .get-data:hover{
     scale:0.95;
     box-shadow: 0px 0px 14px -5px #778a72;
