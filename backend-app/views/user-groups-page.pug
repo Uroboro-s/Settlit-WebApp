@@ -1,0 +1,39 @@
+extends user-dashboard 
+
+
+block content
+  link(rel = "stylesheet" href="/stylesheets/addgroup.css")
+  .content
+    .search-box
+      .add-button
+        | Add Button
+      .groupname-box
+        each group in group_list
+            .groupname
+                a#group1.groupname-text(href=`/users/${user.userid}/groups/group/${group._id}`) #{group.name}
+        
+    .new-group
+      form(method="POST" action=`/users/${user.userid}/groups/group/create`)
+        .for-gap.add-group-name
+          label(for='Group Name') Group Name : 
+          input.get-data(type='text' placeholder='Group Name' name="name" required="true" value=(undefined === group ? '' : group.name))
+        .for-gap.add-member
+          label(for='Add Member') Member : 
+          input.get-data(type='text' placeholder='Member 1' name="members[]" required="true" value=(undefined === group ? '' : group.members[0]))
+          br
+          input.get-data.for-member(type='text' placeholder='Member 2' name="members[]" required="true" value=(undefined === group ? '' : group.members[1]))
+          br
+          input.get-data.for-member(type='text' placeholder='Member 3' name="members[]" required="true" value=(undefined === group ? '' : group.members[2]))
+          br
+        .for-gap.add-Discription
+          label(for='Group Name') Description : 
+          input.get-data(type='text' placeholder='Description')
+        if errors
+          ul
+            for error in errors
+              li!= error.msg
+        .for-gap.buttons
+          .cancel.boxji Cancel
+          .Create.boxji 
+            button(type="submit") Create
+  script(src='/javascripts/addgroup.js')

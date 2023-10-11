@@ -1,0 +1,69 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Settlit Landing Page
+  link(rel='stylesheet' href='/stylesheets/style.css')
+header
+  .header-left
+    .logo
+      img#settlit-logo(src='images/settlit-logo.png' alt='settleit logo')
+      |                     Settlit
+    .nav
+      ul
+        li
+          a(href='') Home
+        li
+          a(href='') About us
+        li
+          a(href='') Blog
+  .header-right
+    button#log-in
+      a(href='/signin') Log in
+    button#sign-up
+      a(href='/signup') Sign up
+main
+  .hero
+    .hero-main
+      .hero-main-txt
+        p Less stress when sharing expenses with others.
+        img(src='' alt='')
+      |                     Make managing shared expenses and bills with friends, family, and groups hassle free.
+      .hero-nav
+        button#get-started Get started
+        button#learn-more Learn more
+    .hero-image
+      img#hero-img(src='images/hero-img.png' alt='man using settlit to track shared expenses')
+  .features
+    .top-card
+      #one.card
+        .card-main-txt
+          | Track expenses
+          p Keep track of personal expenses, balances and who owes who.
+        .card-img
+          | insert image
+      #two.card
+        .card-main-txt
+          | Make groups
+          p Manage expenses between multiple users by making groups.
+        .card-img
+          | insert image
+    .bottom-card
+      #three.card
+        .card-main-txt
+          | Split expenses easily
+          p Efficiently split expenses as per your liking.
+        .card-img
+          | insert image
+      #four.card
+        .card-main-txt
+          | Review expense history
+          p Get weekly, monthly and yearly total expense amount and history.
+        .card-img
+          | insert image
+footer
+  .icons
+    a#facebook(href='')
+    a#twitter(href='')
+    a#instagram(href='')
+  |             Copyright 2023 Settlit, Inc | All Rights Reserved
