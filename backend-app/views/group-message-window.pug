@@ -31,7 +31,17 @@ block content
               .msg-text--individual.paid
                 .msg-text--individual-name #{transaction.reciever.name}
                 .msg-text--individual-money #{transaction.amount}
-                button.msg-text--individual-btn.paid.btn #{transaction.status}
+                if (group.messages)[i].sender == transaction.reciever._id
+                  button.msg-text--individual-btn.paid.btn #{transaction.status} 
+                else if transaction.status === "Pending"
+                  if (transaction.reciever._id.equals(user._id))
+                    button.msg-text--individual-btn.pay.btn  #{transaction.status}
+                    form(method = "POST" action=`/users/${user.userid}/transactions/${transaction._id}/pay`) 
+                        button.pay-button(type="submit") Pay
+                  else 
+                    button.msg-text--individual-btn.pay.btn #{transaction.status}
+                else 
+                  button.msg-text--individual-btn.paid.btn #{transaction.status}
               hr.line
       -} 
         //- .msg.user

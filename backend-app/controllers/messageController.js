@@ -25,8 +25,9 @@ exports.message_create_post = asyncHandler(async(req, res, next) =>{
             sender: currentUserID,
             reciever: group.members[i]._id,
             amount: money,
+            status: (currentUserID.equals(group.members[i]._id)) ? "Successful" : "Pending",
         });
-        //console.log(transaction);
+        console.log(transaction);
         
         transactions.push(transaction);
         i++;
