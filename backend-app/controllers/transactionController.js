@@ -14,7 +14,6 @@ exports.transaction_pay_post = asyncHandler(async(req, res, next) =>{
     const currentUserId = await getUser();
     
     const currentUser = await User.findById(currentUserId).exec();
-    console.log(currentUser);
     if(currentUser === null || currentUser.userid !== req.params.user_id) {
         res.send("Unauthorized access");
         return ;

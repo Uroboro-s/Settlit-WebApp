@@ -17,6 +17,23 @@ remove.addEventListener('click', function() {
 });
 
 
+function addMember() {
+    const input_field_container = document.querySelector('.for-gap.add-member');
+    console.log(input_field_container);
+
+    const input_element = document.createElement('input');
+    input_element.setAttribute('type', 'text');
+    input_element.setAttribute('placeholder', 'Add New Member');
+    input_element.setAttribute('name', 'members[]');
+    input_element.setAttribute('required', 'true');
+
+    input_element.className = "get-data for-member";
+
+    const break_element = document.createElement('br');
+    input_field_container.append(input_element, break_element);
+}
+
+
 
 
 
