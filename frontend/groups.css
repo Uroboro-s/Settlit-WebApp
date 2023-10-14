@@ -189,3 +189,125 @@ main {
     color: rgba(0, 0, 0, 0.718);
 }
 
+.content {
+    padding: 2rem 3rem;
+    width: 83%;
+    background:
+    conic-gradient(from 0deg at calc(500%/6) calc(100%/3),#86ab84 0 120deg,#0000 0),
+    conic-gradient(from -120deg at calc(100%/6) calc(100%/3),#a0c59d 0 120deg,#0000 0),
+    conic-gradient(from 120deg at calc(100%/3) calc(500%/6),#bfd8bd 0 120deg,#0000 0),
+    conic-gradient(from 120deg at calc(200%/3) calc(500%/6),#bfd8bd 0 120deg,#0000 0),
+    conic-gradient(from -180deg at calc(100%/3) 50%,#a0c59d  60deg,#bfd8bd 0 120deg,#0000 0),
+    conic-gradient(from 60deg at calc(200%/3) 50%,#bfd8bd  60deg,#86ab84 0 120deg,#0000 0),
+    conic-gradient(from -60deg at 50% calc(100%/3),#bfd8bd 120deg,#a0c59d 0 240deg,#86ab84 0);
+    background-size: 229px 132px;
+
+  }
+
+.grps-list {
+    background-color: white;
+    height: 100%;
+    padding: 1rem 2rem;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+
+}
+
+.grps-list-content {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 10px;
+    padding: 20px;
+    overflow: auto;
+}
+
+.grps-list-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 230px;
+    height: 195px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    transition: all .2s ease-in-out;
+}
+
+.grps-list-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.grps-list-card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: teal;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.grps-list-card-details {
+    color: #333;
+}
+
+.grps-list-card-details-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.grps-list-card-details-description {
+    font-size: 14px;
+}
+
+.grps-list-card-details-members {
+    font-size: 14px;
+    color: #777;
+}
+
+.grps-list span {
+    padding-left: 28px;
+}
+
+.grps-list-header {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.search-bar {
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  background-color: #f0f0f0;
+  width: 250px;
+
+}
+
+.grps-list-search-bar {
+    display: flex;
+    height: 70%;
+    margin-right: 74px;
+    border-radius: 5px;
+}
+
+.search-button {
+    background: lightgray;
+  border: none;
+  cursor: pointer;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
