@@ -50,3 +50,12 @@ exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
 exports.user_get_myfriends = asyncHandler(async (req, res, next) => {});
 
 exports.user_get_myindividuals = asyncHandler(async (req, res, next) => {});
+
+exports.user_sign_out = asyncHandler(async (req, res, next) => {
+  //Set the active user to none
+  setUser(null);
+  console.log(getUser());
+  //Render The home page
+  res.redirect("/");
+  // res.redirect(`/${getUser()}/account`);
+});
