@@ -1,8 +1,6 @@
-console.log("JAI SHREE RAM");
-
 
 const add_group_modal = document.querySelector('.new-group');
-const blur = document.querySelector('.search-box');
+const blur = document.querySelector('.grps-list');
 const remove = document.querySelector('.cancel');
 const createButton = document.querySelector('.add-button');
 
@@ -18,7 +16,7 @@ remove.addEventListener('click', function() {
 
 
 function addMember() {
-    const input_field_container = document.querySelector('.for-gap.add-member');
+    const input_field_container = document.querySelector('.member-input-container');
     console.log(input_field_container);
 
     const input_element = document.createElement('input');
@@ -29,8 +27,7 @@ function addMember() {
 
     input_element.className = "get-data for-member";
 
-    const break_element = document.createElement('br');
-    input_field_container.append(input_element, break_element);
+    input_field_container.insertBefore(input_element, input_field_container.children[input_field_container.children.length - 1]);
 }
 
 

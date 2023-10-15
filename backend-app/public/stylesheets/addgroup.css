@@ -314,6 +314,8 @@ button{
     border: none;
     font-size: 24px;
 }
+
+/*This is modal*/
 .new-group{
     width: 40rem;
     height: 60vh;

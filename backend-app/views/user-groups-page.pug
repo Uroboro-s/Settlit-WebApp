@@ -24,9 +24,6 @@ block content
           input.get-data.for-member(type='text' placeholder='Member 2' name="members[]" required="true" value=(undefined === group ? '' : group.members[1]))
           br
         button(type="button" onclick="addMember()") +Add member
-        .for-gap.add-Discription
-          label(for='Group Name') Description : 
-          input.get-data(type='text' placeholder='Description')
         if errors
           ul
             for error in errors
