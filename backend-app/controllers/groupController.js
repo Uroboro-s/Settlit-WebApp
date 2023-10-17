@@ -78,12 +78,13 @@ exports.group_message_window_get = asyncHandler(async(req, res, next) =>{
         const message = await Message.findById(loop_variable._id).populate("transactions").exec();
         const single_message_transactions = [];
         for(const inner_loop_variable of message.transactions) {
-            const transaction = await Transaction.findById(inner_loop_variable._id).populate("reciever status amount").exec();
+            const transaction = await Transaction.findById(inner_loop_variable._id).populate("sender reciever status amount").exec();
             single_message_transactions.push(transaction);
         }
         allTransactions.push(single_message_transactions);
     }
 
+    console.log(allTransactions);
     res.render('group-message-window', {
         title: 'Message Window',
         user: user,

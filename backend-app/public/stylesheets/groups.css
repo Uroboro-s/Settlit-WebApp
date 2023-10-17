@@ -294,10 +294,6 @@
     cursor: pointer;
 }
 
-.cancel {
-/*     background-color: rgb(185, 177, 177); */
-    
-}
 .cancel:hover {
     background-color: rgb(185, 177, 177);
 }
