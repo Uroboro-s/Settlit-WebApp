@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="dashBoard.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="/images/settlit-logo.png" alt="settlit logo" id="settlit-logo">
+                Settlit
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-right">
+            <button id="user-account">
+                <img src="images/icons8-user-default-64.png" alt="User Icon" width="60px" height="60px">
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="side-bar">
+            <a href="" class="dashboard-button"><img src="images/dashboard.png" class = "side-bar-icon"  alt="settlit logo">Dashboard</a>
+            <a href="" class="all-expenses-button"><img src="images/money.png" alt="payment icon" class="side-bar-icon">All Expenses</a>
+            <div class="individuals">
+                <a href="" class="individuals-button"><u>Individuals</u> <img src="images/plus.png" alt="plus icon" id="plus-icon"></a>
+                <div class="individuals-content">
+                    <ul>
+                        <li><img src="images/individual-icon.png" alt="individual logo" class="side-bar-icon"><a href="" id="individual-1">Individual 1</a></li>
+                        <li><img src="images/individual-icon.png" alt="individual logo" class="side-bar-icon"><a href="" id="individual-2">Individual 2</a></li>
+                        <li><img src="images/individual-icon.png" alt="individual logo" class="side-bar-icon"><a href="" id="individual-3">Individual 3</a></li>
+                        <li><img src="images/individual-icon.png" alt="individual logo" class="side-bar-icon"><a href="" id="individual-4">Individual 4</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="groups">
+                <a href="" class="groups-button"><u>Groups</u> <img src="images/plus.png" alt="plus icon" id="plus-icon"></a>
+                <div class="groups-content">
+                    <ul>
+                        <li><img src="images/group-icon.png" alt="groups icon" class="side-bar-icon"><a href="" id="group-1">Group 1</a></li>
+                        <li><img src="images/group-icon.png" alt="groups icon" class="side-bar-icon"><a href="" id="group-2">Group 2</a></li>
+                        <li><img src="images/group-icon.png" alt="groups icon" class="side-bar-icon"><a href="" id="group-3">Group 3</a></li>
+                        <li><img src="images/group-icon.png" alt="groups icon" class="side-bar-icon"><a href="" id="group-4">Group 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="db-content">
+            <div class="db-money-list">
+                <div class="db-money-innerbox">
+                    <div class="db-get-name">To get </div>
+                    <div class="db-moneylist">
+                        <ul>
+                            <li class="db-get-name-list">Group 1
+                                <ul>
+                                    <li class="db-get-money" >to get 200 </li>
+                                </ul>
+                            </li>
+                            <li class="db-get-name-list" >Friend 2
+                                <ul>
+                                    <li class="db-get-money" >to get 300 </li>
+                                </ul>
+                            </li>
+                            <li class="db-get-name-list" >Group 5
+                                <ul>
+                                    <li class="db-get-money" >to get 500 </li>
+                                </ul>
+                            </li>
+                          </ul> 
+                    </div>
+                </div>
+                <div class="db-money-innerbox">
+                    <div class="db-give-name">To give</div>
+                    <div class="db-moneylist">
+                        <ul>
+                            <li class="db-give-name-list">Group 4
+                                <ul>
+                                    <li class="db-give-money" >to give 200 </li>
+                                </ul>
+                            </li>
+                            <li class="db-give-name-list" >Friend 3
+                                <ul>
+                                    <li class="db-give-money" >to give 300 </li>
+                                </ul>
+                            </li>
+                            <li class="db-give-name-list" >Group 3
+                                <ul>
+                                    <li class="db-give-money" >to give 500 </li>
+                                </ul>
+                            </li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="db-pie-chart">
+                <div class="db-pie-chart-content">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div> 
+        </div>
+    </main>
+    <script src="dbChart.js"></script>
+</body>
+</html>
