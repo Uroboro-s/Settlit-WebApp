@@ -63,6 +63,7 @@ li {
   margin-right: 100px;
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 #user-account {
@@ -231,4 +232,70 @@ main {
 }
 .logout {
   color: #ef4444;
+}
+
+.notification {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+.notification-svg-box {
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  background-color: inherit;
+}
+
+.notification-svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.notification-img {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+}
+
+.notification-box.hidden {
+  display: none;
+  transform: translateY(-100%);
+  transition: all 1s ease-in;
+}
+
+.notification-box {
+  position: absolute;
+  background-color: rgba(111, 225, 225, 0.87);
+  box-shadow: 0px 0px 2.4rem rgba(1, 1, 1, 0.19);
+  border-radius: 1.2rem;
+
+  max-height: 30rem;
+  width: 24rem;
+  transform: translate(-12rem, 1.8rem);
+
+  overflow: auto;
+}
+.notification-list {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+.notification-item {
+  max-height: 10rem;
+  list-style: none;
+  background-color: #ccfbf1;
+  border-radius: 1.2rem;
+  box-shadow: 0rem 0rem 2.4rem rgba(1, 1, 1, 0.19);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.2rem;
+  /* overflow: auto; */
+}
+
+.notification-title {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
 }
