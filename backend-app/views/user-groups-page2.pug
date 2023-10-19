@@ -1,0 +1,51 @@
+extends user-dashboard 
+
+block content
+    link(rel='stylesheet' href='/stylesheets/groups.css')
+    .content
+        .grps-list
+            .grps-list-header
+                span Groups
+                .add-button Add button
+                .grps-list-search-bar
+                    input.search-bar(type='text' placeholder='Search..')
+                    button.search-button(type='submit')
+                        img(src='/images/search.png' width='16px' height='16px')
+                        i.fa.fa-search
+            .grps-list-content
+                each group in group_list
+                    a(href=`/users/${user.userid}/groups/group/${group._id}`)
+                        .grps-list-card
+                            .grps-list-card-icon
+                            .grps-list-card-details
+                                h3.grps-list-card-details-name #{group.name}
+                                p.grps-list-card-details-description #{group.description}
+                                .grps-list-card-details-members Members: #{group.members.length}
+        .new-group
+            form(method="POST" action=`/users/${user.userid}/groups/group/create`)
+                .for-gap.add-group-name
+                    label(for='Group Name') Group Name : 
+                    input.get-data(type='text' placeholder='Group Name' name="name" required="true" value=(undefined === group ? '' : group.name))
+                .for-gap.add-group-description
+                    label(for='group description') Description: 
+                    textarea.get-data.for-description(name="description", cols="30", rows="10") 
+                .for-gap.add-member
+                    .members-label-heading 
+                        label(for='Add Member') Members : 
+                    .member-input-container
+                        input.get-data.for-member(type='text' placeholder='Member 1' name="members[]" required="true" value=(undefined === group ? '' : group.members[0]))
+                        
+                        input.get-data.for-member(type='text' placeholder='Member 2' name="members[]" required="true" value=(undefined === group ? '' : group.members[1]))
+                        
+                        button.add-member-button(type="button" onclick="addMember()") +Add member
+                if errors
+                    ul
+                        for error in errors
+                            li!= error.msg
+                .for-gap.buttons
+                    .cancel.boxji Cancel
+                    .create.boxji 
+                        button(type="submit") Create
+
+    script(src='/javascripts/addgroup.js')
+
