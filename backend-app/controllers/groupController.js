@@ -25,6 +25,7 @@ exports.group_create_post = [
             res.send("Unauthorized access");
             return ;
         }
+        console.log(req.body.description);
         const errors = validationResult(req);
 
         const groupMembers = [];
@@ -37,6 +38,7 @@ exports.group_create_post = [
         const group = new Group({
             name: req.body.name,
             admin: currentUserId,
+            description: req.body.description,
             members: groupMembers,
             messages: [],
         });
@@ -69,7 +71,7 @@ exports.group_message_window_get = asyncHandler(async(req, res, next) =>{
     const currentUserId = await getUser();
     const user = await User.findById(currentUserId).exec();
 
-    const group = await Group.findById(req.params.group_id).populate("members messages").exec();
+    const group = await Group.findById(req.params.group_id).populate("members description messages").exec();
     const allMessages = group.messages;
 
     const allTransactions = [];

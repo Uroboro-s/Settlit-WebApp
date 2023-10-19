@@ -37,8 +37,7 @@ exports.user_get_mygroups = asyncHandler(async(req, res, next) =>{
         res.send("Unauthorized access");
         return ;
     }
-    const GroupsofUser = await Group.find({members: currentUserId}, "name admin members").exec();
-
+    const GroupsofUser = await Group.find({members: currentUserId}, "name admin members description").exec();
     res.render('user-groups-page2', {
         title: "My Groups",
         group_list: GroupsofUser,

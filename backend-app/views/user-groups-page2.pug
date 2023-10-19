@@ -19,7 +19,7 @@ block content
                             .grps-list-card-icon
                             .grps-list-card-details
                                 h3.grps-list-card-details-name #{group.name}
-                                p.grps-list-card-details-description Group description goes here.
+                                p.grps-list-card-details-description #{group.description}
                                 .grps-list-card-details-members Members: #{group.members.length}
         .new-group
             form(method="POST" action=`/users/${user.userid}/groups/group/create`)
@@ -28,7 +28,7 @@ block content
                     input.get-data(type='text' placeholder='Group Name' name="name" required="true" value=(undefined === group ? '' : group.name))
                 .for-gap.add-group-description
                     label(for='group description') Description: 
-                    textarea.get-data.for-description(name="", cols="30", rows="10") 
+                    textarea.get-data.for-description(name="description", cols="30", rows="10") 
                 .for-gap.add-member
                     .members-label-heading 
                         label(for='Add Member') Members : 
