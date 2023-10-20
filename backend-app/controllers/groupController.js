@@ -83,7 +83,7 @@ exports.group_create_post = [
 //Display the message window on GET
 exports.group_message_window_get = asyncHandler(async (req, res, next) => {
   const currentUserId = await getUser();
-  const user = await User.findById(currentUserId).exec();
+  const user = await User.findById(currentUserId).populate("notifications").exec();
 
   const group = await Group.findById(req.params.group_id)
     .populate("members description messages")

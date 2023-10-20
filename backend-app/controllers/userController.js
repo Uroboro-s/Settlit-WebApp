@@ -37,7 +37,7 @@ exports.user_get_myaccount = asyncHandler(async (req, res, next) => {});
 exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
   const currentUserId = await getUser();
   console.log("again here");
-  const currentUser = await User.findById(currentUserId).exec();
+  const currentUser = await User.findById(currentUserId).populate("notifications").exec();
   if (currentUser === null || currentUser.userid !== req.params.user_id) {
     res.send("Unauthorized access");
     return;
