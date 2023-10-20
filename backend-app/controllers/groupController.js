@@ -37,10 +37,11 @@ exports.group_create_post = [
     });
     const groupMembers = [];
     for (const member of req.body["members[]"]) {
-      groupMembers.push(await User.findOne({ userid: member }, "_id").exec());
-      await User.findOne({ userid: member }, "_id")
-        .exec()
-        .notification.push(groupNotification);
+      const userMember = await User.findOne({ userid: member }, "_id")
+        .populate("notifications")
+        .exec();
+      userMember.notifications.push(groupNotification);
+      groupMembers.push(userMember);
     }
 
     groupMembers.unshift(currentUserId);
@@ -70,6 +71,12 @@ exports.group_create_post = [
     } else {
       if (groupMembers.includes(null)) {
         res.send("Invalid userid");
+      }
+      for (const member of req.body["members[]"]) {
+        const userMember = await User.findOne({ userid: member }, "_id")
+          .populate("notifications")
+          .exec();
+        await userMember.save();
       }
       await group.save();
       res.redirect(`/users/${currentUser.userid}/groups/group/${group._id}`);
