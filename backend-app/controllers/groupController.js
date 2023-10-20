@@ -23,26 +23,29 @@ exports.group_create_post = [
 
     const currentUser = await User.findById(currentUserId).exec();
     console.log(currentUser);
-    if (currentUser === null || currentUser.userid !== req.params.user_id) {
+   /*  if (currentUser === null || currentUser.userid !== req.params.user_id) {
       res.send("Unauthorized access");
       return;
-    }
+    } */
+    
     const errors = validationResult(req);
     const groupNotification = new Notification({
       sender: await User.findById(currentUserId).exec(),
       // senderImg: req.body.user
-      message: `${await User.findById(
-        currentUserId
-      ).exec()} added  you to group ${req.body.name}`,
+      message: `${currentUser.name} added  you to group '${req.body.name}'`,
     });
+    console.log("herer");
     const groupMembers = [];
     for (const member of req.body["members[]"]) {
-      groupMembers.push(await User.findOne({ userid: member }, "_id").exec());
-      await User.findOne({ userid: member }, "_id")
-        .exec()
-        .notification.push(groupNotification);
+      const userMember = await User.findOne({ userid: member }).exec();
+      console.log(userMember);
+      userMember.notifications.push(groupNotification);
+      groupMembers.push(userMember);
+      userMember.save();
+        
     }
-
+    groupNotification.save();
+    console.log(groupMembers[1].notifications);
     groupMembers.unshift(currentUserId);
 
     const group = new Group({
