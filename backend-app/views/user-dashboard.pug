@@ -54,27 +54,27 @@ main
       img(src="/images/money.png" alt ="" class ="side-bar-icon") 
       | All Expenses
     .individuals
-      a.individuals-button(href='')
-        | Individuals 
+      a.individuals-button(href=`/users/${user.userid}/friends`)
+        | Friends 
         img#plus-icon(src='/images/plus.png' alt='plus icon')
       .individuals-content
         ul
           li
             a#individual-1(href='') 
               img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon") 
-              | Individual 1
+              | Friend 1
           li
             a#individual-2(href='') 
               img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
-              | Individual 2
+              | Friend 2
           li
             a#individual-3(href='') 
               img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
-              | Individual 3
+              | Friend 3
           li
             a#individual-4(href='') 
               img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
-              | Individual 4
+              | Friend 4
     .groups
       a.groups-button(href=`/users/${user.userid}/groups`)
         | Groups 

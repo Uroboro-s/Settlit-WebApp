@@ -1,0 +1,83 @@
+extends user-dashboard 
+
+block content 
+    link(rel='stylesheet' href='/stylesheets/friends.css')
+    script(src='/javascripts/friends.js' defer)
+    .content
+        .frnds-list
+            .frnds-list-header
+                span Friends
+                button.add-frnd Friend Request
+                .frnds-list-search-bar
+                    input.search-bar(type='text' placeholder='Search..')
+                    button.search-button(type='submit')
+                        img(src='images/search.png' width='16px' height='16px')
+                        i.fa.fa-search
+            .frnds-list-content
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-list-card
+                    .frnds-list-card-icon
+                    .frnds-list-card-details
+                        p.frnds-list-card-details-name Friend Name
+                        p.frnds-list-card-details-status Status : Online
+                .frnds-add-button-container 
+                    button.frnds-add-button(type="button") +
+        .modal.hidden
+            .modal-addfriend Add Friend
+            form.modal-input(method="POST" action=`/users/${user.userid}/friends/sendrequest`)
+                input.modal-userid(type='userid--field' placeholder='UserID' name="friend_userid" required="true")
+        
+                .button-box
+                    button.btn-modal(type = "submit")
+                        span.message-box Add
+                    button.btn-cancel(type="button")
+                        span.message-box Cancel
+            if error
+                p.frnds-error-msg #{error}
+           
+                
+            

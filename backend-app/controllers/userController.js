@@ -34,6 +34,8 @@ exports.user_get_home = asyncHandler(async (req, res, next) => {
 
 exports.user_get_myaccount = asyncHandler(async (req, res, next) => {});
 
+
+//GET the groups main page of user
 exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
   const currentUserId = await getUser();
   console.log("again here");
@@ -54,10 +56,29 @@ exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
   });
 });
 
-exports.user_get_myfriends = asyncHandler(async (req, res, next) => {});
+
+//GET the friends main page of user
+exports.user_get_myfriends = asyncHandler(async (req, res, next) => {
+  const currentUserId = await getUser();
+  const currentUser = await User.findById(currentUserId).populate("notifications").exec();
+  console.log("jai");
+  console.log(currentUserId);
+  const allFriends = await User.find({friends: currentUserId}).exec();
+  console.log(allFriends);
+
+  res.render('user-friends-page', {
+    title: "My Friends",
+    user: currentUser,
+    friends_list: allFriends,
+  });
+});
+
+
 
 exports.user_get_myindividuals = asyncHandler(async (req, res, next) => {});
 
+
+//Handle log-out request
 exports.user_sign_out = asyncHandler(async (req, res, next) => {
   //Set the active user to none
   setUser(null);
