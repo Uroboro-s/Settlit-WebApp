@@ -7,7 +7,26 @@ block content
         .frnds-list
             .frnds-list-header
                 span Friends
-                button.add-frnd Friend Request
+                .frnds-friend-request-container
+                    button.frnds-request-btn Friend Request
+                    .frnds-friend-request-box.hidden 
+                        ul.frnds-request-list
+                            if request_list
+                                each request in request_list 
+                                    li.request-item 
+                                        span.frnds-username #{request.sender.name}
+                                        button.accept-button &check;
+                                        button.reject-button &cross;
+
+                            li.request-item 
+                                span.frnds-username John Doe 
+                                button.accept-button &check;
+                                button.reject-button &cross;
+                            li.request-item 
+                                span.frnds-username Jane Doe 
+                                button.accept-button &check;
+                                button.reject-button &cross;
+
                 .frnds-list-search-bar
                     input.search-bar(type='text' placeholder='Search..')
                     button.search-button(type='submit')

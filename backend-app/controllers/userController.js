@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const Group = require("../models/group");
+const FriendRequest = require('../models/friendrequest');
 
 const asyncHandler = require("express-async-handler");
 
@@ -65,11 +66,14 @@ exports.user_get_myfriends = asyncHandler(async (req, res, next) => {
   console.log(currentUserId);
   const allFriends = await User.find({friends: currentUserId}).exec();
   console.log(allFriends);
+  const allRequests = await FriendRequest.find({reciever: currentUserId}).populate("sender").exec();
+  console.log(allRequests);
 
   res.render('user-friends-page', {
     title: "My Friends",
     user: currentUser,
     friends_list: allFriends,
+    request_list: allRequests,
   });
 });
 

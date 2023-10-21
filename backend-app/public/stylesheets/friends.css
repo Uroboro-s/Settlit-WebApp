@@ -90,18 +90,77 @@
     font-size: 14px;
     color: #777;
 } */
-
 .frnds-list span {
-    padding-left: 28px;
+  padding-left: 28px;
+}
+/*this is friend requests modal*/
+.frnds-friend-request-container {
+  position: relative;
+  display: inline-block;
 }
 
-.add-frnd{
-    margin-left: 280px;
-    font-size: 14px;
-    padding: 6px;
-    border: none;
-    background-color: #f0f0f0;
+.frnds-request-btn{
+  margin-left: 280px;
+  font-size: 14px;
+  padding: 6px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
 }
+
+.frnds-friend-request-box {
+  background-color: rgba(111, 225, 225, 0.87);
+  position: absolute;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.frnds-request-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 1.2rem;
+  background-color: #ccfbf1;
+}
+
+.username {
+  flex: 1;
+  font-size: 12px;
+}
+
+.accept-button, .reject-button {
+  cursor: pointer;
+  color: white;
+  font-size: x-large;
+  background-color: rgba(255, 255, 255, 0.347);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+.accept-button {
+  color: green;
+}
+.reject-button {
+  color: red;
+}
+
+/* .frnds-friend-request-container:hover .frnds-friend-request-box {
+  display: flex;
+  flex-direction: column;
+} */
+
+
+
+
+
+
 
 .frnds-list-header {
     display: flex;
@@ -146,7 +205,7 @@
     height: 5rem;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.121);
-    
+    cursor: pointer;
     font-size: 4rem;
     background-color: inherit;
     /* box-shadow: 10px 10px 5px gray, -10px 10px 5px gray; */
