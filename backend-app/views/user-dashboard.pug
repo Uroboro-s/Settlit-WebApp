@@ -30,8 +30,8 @@ header
             li.notification-item
               .notification-title
                 img.notification-img.img(src='/images/individual-icon.png')
-                .notification-heading = notification.sender
-              .notification-description = notification.message
+                .notification-heading #{notification.sender}
+              .notification-description #{notification.message}
     button#user-account
       img(src='/images/icons8-user-default-64.png' alt='User Icon' width='60px' height='60px')
     .modal-window

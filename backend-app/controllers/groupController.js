@@ -33,7 +33,8 @@ exports.group_create_post = [
       // senderImg: req.body.user
       message: `${await User.findById(
         currentUserId
-      ).exec()} added  you to group ${req.body.name}`,
+      ).exec()} added you to group ${req.body.name}`,
+      type: "groupAddition",
     });
     const groupMembers = [];
     for (const member of req.body["members[]"]) {
