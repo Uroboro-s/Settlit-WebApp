@@ -11,21 +11,26 @@ block content
                     button.frnds-request-btn Friend Request
                     .frnds-friend-request-box.hidden 
                         ul.frnds-request-list
-                            if request_list
+                            if request_list.length > 0
                                 each request in request_list 
                                     li.request-item 
                                         span.frnds-username #{request.sender.name}
-                                        button.accept-button &check;
-                                        button.reject-button &cross;
-
-                            li.request-item 
-                                span.frnds-username John Doe 
-                                button.accept-button &check;
-                                button.reject-button &cross;
-                            li.request-item 
-                                span.frnds-username Jane Doe 
-                                button.accept-button &check;
-                                button.reject-button &cross;
+                                        form(method="POST" action=`/users/${user.userid}/friends/${request._id}/approve`)
+                                            button.accept-button &check;
+                                        form(method="POST" action=`/users/${user.userid}/friends/${request._id}/reject`)
+                                            button.reject-button &cross;
+                            else
+                                li.request-item 
+                                    span.frnds-username 
+                                    |You have no friend requests!
+                            //- li.request-item 
+                            //-     span.frnds-username John Doe 
+                            //-     button.accept-button &check;
+                            //-     button.reject-button &cross;
+                            //- li.request-item 
+                            //-     span.frnds-username Jane Doe 
+                            //-     button.accept-button &check;
+                            //-     button.reject-button &cross;
 
                 .frnds-list-search-bar
                     input.search-bar(type='text' placeholder='Search..')
@@ -33,56 +38,14 @@ block content
                         img(src='images/search.png' width='16px' height='16px')
                         i.fa.fa-search
             .frnds-list-content
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
-                .frnds-list-card
-                    .frnds-list-card-icon
-                    .frnds-list-card-details
-                        p.frnds-list-card-details-name Friend Name
-                        p.frnds-list-card-details-status Status : Online
+                each friend in friends_list 
+                    .frnds-list-card
+                        .frnds-list-card-icon
+                        .frnds-list-card-details
+                            p.frnds-list-card-details-name #{friend.name}
+                            p.frnds-list-card-details-status Status : Online
+
+                
                 .frnds-add-button-container 
                     button.frnds-add-button(type="button") +
         .modal.hidden

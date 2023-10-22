@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const Group = require("../models/group");
 const FriendRequest = require('../models/friendrequest');
+const Transaction = require('../models/transaction');
 
 const asyncHandler = require("express-async-handler");
 
@@ -18,18 +19,23 @@ exports.user_get_home = asyncHandler(async (req, res, next) => {
     res.send("Unauthorized access");
     return;
   } */
-  console.log()
+  
   const user = await User.findOne({ userid: req.params.user_id }).populate("notifications").exec();
   const testUser = await User.populate(user, {
     path: 'notifications.sender',
     model: 'User',
   });
+  const transactionOwedByYou = await Transaction.find({reciever: currentUserId, status: "Pending"}).populate('sender').exec();
+  const transactionOwedToYou = await Transaction.find({sender: currentUserId, status: "Pending"}).populate('reciever').exec();
+  
   console.log(user);
   //console.log(testUser);
   console.log(user.notifications);
   res.render("user-dashboard", {
     title: "Home",
     user: user,
+    toget_list: transactionOwedToYou,
+    togive_list: transactionOwedByYou,
   });
 });
 
@@ -66,7 +72,7 @@ exports.user_get_myfriends = asyncHandler(async (req, res, next) => {
   console.log(currentUserId);
   const allFriends = await User.find({friends: currentUserId}).exec();
   console.log(allFriends);
-  const allRequests = await FriendRequest.find({reciever: currentUserId}).populate("sender").exec();
+  const allRequests = await FriendRequest.find({reciever: currentUserId, status: "Pending"}).populate("sender").exec();
   console.log(allRequests);
 
   res.render('user-friends-page', {

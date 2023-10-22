@@ -1,15 +1,10 @@
-const btn = document.getElementById("user-account");
-const modal = document.querySelector(".modal-window");
-const btnNotification = document.querySelector(".notification-svg-box");
-const notificationBox = document.querySelector(".notification-box");
+console.log("JAI SHREE RAM");
 
-btn.addEventListener("click", function () {
-  modal.classList.toggle("open");
-  notificationBox.classList.add("hidden");
-});
-
-btnNotification.addEventListener("click", function (e) {
-  e.preventDefault();
-  notificationBox.classList.toggle("hidden");
-  modal.classList.remove("open");
-});
+const user = {
+    groupName: "group1",
+    payment: {
+      what: "To get",
+      money: 200
+    }
+    
+  };

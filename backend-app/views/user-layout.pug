@@ -1,0 +1,102 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title= title
+  link(rel='stylesheet' href='/stylesheets/user-layout.css')
+  script(type='module', src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
+  script(nomodule='', src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')
+
+header
+  .header-left
+    .logo
+      img#settlit-logo(src='/images/settlit-logo.png' alt='settleit logo')
+      |                 Settlit
+    .nav
+      ul
+        li
+          a(href='') Home
+        li
+          a(href='') About us
+        li
+          a(href='') Blog
+  .header-right
+    .notification
+      button.notification-svg-box
+        ion-icon.notification-svg(name='notifications-outline')
+      .notification-box.hidden
+        ul.notification-list
+          
+          each notification in user.notifications
+          
+            li.notification-item
+              .notification-title
+                img.notification-img.img(src='/images/individual-icon.png')
+                .notification-heading #{notification.sender.name}
+              .notification-description #{notification.message}
+    button#user-account
+      img(src='/images/icons8-user-default-64.png' alt='User Icon' width='60px' height='60px')
+    .modal-window
+      ul.modal-list
+        li
+          a.modal-link(href='#') Account
+        li
+          a.modal-link(href='#') Settings
+        li
+          a.modal-link.logout(href='/signout') Log out
+    script(src="/javascripts/user-layout.js")
+main
+  .side-bar
+    a.dashboard-button(href='') 
+      img(src="/images/dashboard.png" alt ="" class ="side-bar-icon") 
+      | Dashboard
+    a.all-expenses-button(href='') 
+      img(src="/images/money.png" alt ="" class ="side-bar-icon") 
+      | All Expenses
+    .individuals
+      a.individuals-button(href=`/users/${user.userid}/friends`)
+        | Friends 
+        img#plus-icon(src='/images/plus.png' alt='plus icon')
+      .individuals-content
+        ul
+          li
+            a#individual-1(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon") 
+              | Friend 1
+          li
+            a#individual-2(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
+              | Friend 2
+          li
+            a#individual-3(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
+              | Friend 3
+          li
+            a#individual-4(href='') 
+              img(src="/images/individual-icon.png" alt ="" class ="side-bar-icon")
+              | Friend 4
+    .groups
+      a.groups-button(href=`/users/${user.userid}/groups`)
+        | Groups 
+        img#plus-icon(src='/images/plus.png' alt='plus icon')
+      .groups-content
+        ul
+          li
+            a#group-1(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 1
+          li
+            a#group-2(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 2
+          li
+            a#group-3(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 3
+          li
+            a#group-4(href='') 
+              img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
+              | Group 4
+  hr
+  
+  block content

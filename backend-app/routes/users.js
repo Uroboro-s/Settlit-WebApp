@@ -72,5 +72,10 @@ router.post("/:user_id/transactions/:transaction_id/pay",transactionController.t
 //POST the friend-request form
 router.post('/:user_id/friends/sendrequest', friendController.friendrequest_send_post);
 
+//POST the friend-request on approval
+router.post('/:user_id/friends/:request_id/approve', friendController.friendrequest_approve_post);
+
+//POST the friend-request on reject
+router.post('/:user_id/friends/:request_id/reject', friendController.friendrequest_reject_post);
 
 module.exports = router;
