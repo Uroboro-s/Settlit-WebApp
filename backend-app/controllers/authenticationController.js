@@ -125,11 +125,11 @@ exports.signup_post = [
       await loginNotification.save();
       user.notifications.push(loginNotification);
       //   user.notifications = [loginNotification];
-      await credential.save();
       await User.findOne({ name: req.body.name })
         .populate("notifications")
         .exec();
       await user.save();
+      await credential.save();
       setUser(user._id);
       res.redirect(user.url);
     }
