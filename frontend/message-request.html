@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request</title>
+    <link rel="stylesheet" href="message-request.css">
+    <script src="message-request.js" defer></script>
+</head>
+<body>
+    <div class="content">
+        <div class="grps-message">
+            <div class="request-main">
+                <div class="request-main-header">
+                    Add an expense
+                    <span class="dismiss1">x</span>
+                </div>
+                <div class="request-main-body">
+                    <div class="request-main-body-hero">
+                        <img src="images/payment.png" alt="request money icon" class="request-main-body-hero-icon">
+                        <form action="" class="request-main-body-hero-form">
+                            <input type="text" placeholder="Enter a description" class="request-main-body-hero-form-description">
+                            <div class="request-main-body-hero-form-currency-wrap">
+                                <span class="currency-code">INR</span>
+                                <input type="number" placeholder="0.00" class="request-main-body-hero-form-cost">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="request-main-body-splitting-option">
+                        Paid by you and split <span class="request-main-body-splitting-option-btn">equally</span>.
+                    </div>
+                </div>
+                <div class="request-main-footer">
+                    <button class="cancel-button">
+                        Cancel
+                    </button>
+                    <button class="save-button">
+                        Save
+                    </button>
+                </div>
+            </div>
+            <div class="request-splitting-options hidden">
+                <div class="request-splitting-options-header">
+                    Choose split options
+                    <span class="dismiss">x</span>
+                </div>
+                <div class="request-splitting-options-buttons">
+                    <button class="split-equally-btn">
+                        =
+                    </button>
+                    <button class="split-by-amount-btn">
+                        1.23
+                    </button>
+                </div>
+                <div class="request-split-equally">
+                    <h3>Split equally</h3>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 1</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 2</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 3</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 4</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 5</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 6</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                    <div class="request-split-equally-members">
+                        <div class="request-split-equally-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-equally-name">Individual 7</span>
+                        </div>
+                        <div class="request-split-equally-members-right"><span class="request-split-equally-currency">INR</span><span class="request-split-equally-amount">0.00</span></div>
+                    </div>
+                </div>
+                <div class="request-split-by-amount">
+                    <h3>Split unequally</h3>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 1</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 2</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 4</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 5</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 6</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 7</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 8</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                    <div class="request-split-by-amount-members">
+                        <div class="request-split-by-amount-members-left">
+                            <img src="images/profile.png" alt="" class="user-profile-pic">
+                            <span class="request-split-by-amount-name">Individual 9</span>
+                        </div>
+                        <div class="request-split-by-amount-amount">
+                            <span>INR</span>
+                            <input type="number" class="request-split-by-amount-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
