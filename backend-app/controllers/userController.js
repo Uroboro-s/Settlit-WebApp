@@ -42,7 +42,7 @@ exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
     "name admin members description"
   ).exec();
 
-  res.render("user-groups-page2", {
+  res.render("user-groups-page", {
     title: "My Groups",
     group_list: GroupsofUser,
     user: currentUser,
