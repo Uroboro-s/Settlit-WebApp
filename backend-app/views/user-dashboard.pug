@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Home Page
+  title= title
   link(rel='stylesheet' href='/stylesheets/user-dashboard.css')
   script(type='module', src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
   script(nomodule='', src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')
@@ -26,12 +26,14 @@ header
         ion-icon.notification-svg(name='notifications-outline')
       .notification-box.hidden
         ul.notification-list
+          li fjwefobwer
           each notification in user.notifications
+          
             li.notification-item
               .notification-title
                 img.notification-img.img(src='/images/individual-icon.png')
-                .notification-heading = notification.sender
-              .notification-description = notification.message
+                .notification-heading #{notification.sender}
+              .notification-description #{notification.message}
     button#user-account
       img(src='/images/icons8-user-default-64.png' alt='User Icon' width='60px' height='60px')
     .modal-window
@@ -96,5 +98,5 @@ main
               img(src="/images/group-icon.png" alt ="" class ="side-bar-icon")
               | Group 4
   hr
-  .content
-    block content
+  
+  block content

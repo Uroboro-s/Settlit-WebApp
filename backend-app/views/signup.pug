@@ -236,7 +236,7 @@ html
         div.form-input
             input.mobilenumber.data-input(type='email' placeholder='Email' name="email" required="true" value=(undefined===credential ? '' : credential.email))
         div.form-input
-            input.passWord.data-input(type='password' placeholder='Password' name="password" required="true" value=(undefined===credential ? '' : credential.password))
+            input.passWord.data-input(type='password' placeholder='Password' autocomplete ="on" name="password" required="true" value=(undefined===credential ? '' : credential.password))
         if errors 
                 ul(style="color:red;")
                     for error in errors 

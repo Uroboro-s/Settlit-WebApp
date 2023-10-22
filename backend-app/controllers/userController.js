@@ -12,13 +12,15 @@ exports.user_get_home = asyncHandler(async (req, res, next) => {
   const currentUserId = await getUser();
 
   const currentUser = await User.findById(currentUserId).exec();
-  console.log(currentUser);
+  // console.log(currentUser);
   if (currentUser === null || currentUser.userid !== req.params.user_id) {
     res.send("Unauthorized access");
     return;
   }
-  const user = await User.findOne({ userid: req.params.user_id }).exec();
-  console.log(user);
+  const user = await User.findOne({ userid: req.params.user_id })
+    .populate("notifications")
+    .exec();
+  // console.log(user);
   res.render("user-dashboard", {
     title: "Home",
     user: user,
@@ -37,7 +39,7 @@ exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
   }
   const GroupsofUser = await Group.find(
     { members: currentUserId },
-    "name"
+    "name admin members description"
   ).exec();
 
   res.render("user-groups-page", {

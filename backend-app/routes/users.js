@@ -4,6 +4,7 @@ const router = express.Router();
 const userController = require("../controllers/userController");
 const groupController = require("../controllers/groupController");
 const messageController = require("../controllers/messageController");
+const transactionController = require("../controllers/transactionController");
 
 /* GET users listing which should'nt be possible*/
 router.get("/", function (req, res, next) {
@@ -43,6 +44,14 @@ router.get(
 router.post(
   "/:user_id/groups/group/:group_id/createmsg",
   messageController.message_create_post
+);
+
+//Transaction Routes below**
+
+//POST the transaction pay request
+router.post(
+  "/:user_id/transactions/:transaction_id/pay",
+  transactionController.transaction_pay_post
 );
 
 module.exports = router;

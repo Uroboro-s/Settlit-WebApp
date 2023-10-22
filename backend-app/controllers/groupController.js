@@ -8,7 +8,6 @@ const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
 
 const { getUser } = require("../controllers/currentUser");
-const notification = require("../models/notification");
 
 //POST the group-create form
 exports.group_create_post = [
@@ -24,31 +23,37 @@ exports.group_create_post = [
 
     const currentUser = await User.findById(currentUserId).exec();
     console.log(currentUser);
-    if (currentUser === null || currentUser.userid !== req.params.user_id) {
+    /*  if (currentUser === null || currentUser.userid !== req.params.user_id) {
       res.send("Unauthorized access");
       return;
-    }
+    } */
+
     const errors = validationResult(req);
     const groupNotification = new Notification({
       sender: await User.findById(currentUserId).exec(),
       // senderImg: req.body.user
       message: `${await User.findById(
         currentUserId
-      ).exec()} added  you to group ${req.body.name}`,
+      ).exec()} added you to group ${req.body.name}`,
+      type: "groupAddition",
     });
+    console.log("herer");
     const groupMembers = [];
     for (const member of req.body["members[]"]) {
-      groupMembers.push(await User.findOne({ userid: member }, "_id").exec());
-      await User.findOne({ userid: member }, "_id")
-        .exec()
-        .notification.push(groupNotification);
+      const userMember = await User.findOne({ userid: member }).exec();
+      console.log(userMember);
+      userMember.notifications.push(groupNotification);
+      groupMembers.push(userMember);
+      userMember.save();
     }
-
+    groupNotification.save();
+    console.log(groupMembers[1].notifications);
     groupMembers.unshift(currentUserId);
 
     const group = new Group({
       name: req.body.name,
       admin: currentUserId,
+      description: req.body.description,
       members: groupMembers,
       messages: [],
     });
@@ -71,6 +76,12 @@ exports.group_create_post = [
       if (groupMembers.includes(null)) {
         res.send("Invalid userid");
       }
+      for (const member of req.body["members[]"]) {
+        const userMember = await User.findOne({ userid: member }, "_id")
+          .populate("notifications")
+          .exec();
+        await userMember.save();
+      }
       await group.save();
       res.redirect(`/users/${currentUser.userid}/groups/group/${group._id}`);
     }
@@ -83,7 +94,7 @@ exports.group_message_window_get = asyncHandler(async (req, res, next) => {
   const user = await User.findById(currentUserId).exec();
 
   const group = await Group.findById(req.params.group_id)
-    .populate("members messages")
+    .populate("members description messages")
     .exec();
   const allMessages = group.messages;
 
@@ -95,7 +106,7 @@ exports.group_message_window_get = asyncHandler(async (req, res, next) => {
     const single_message_transactions = [];
     for (const inner_loop_variable of message.transactions) {
       const transaction = await Transaction.findById(inner_loop_variable._id)
-        .populate("reciever status amount")
+        .populate("sender reciever status amount")
         .exec();
       single_message_transactions.push(transaction);
     }
