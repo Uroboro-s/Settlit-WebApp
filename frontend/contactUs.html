@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settlit Landing Page</title>
+    <link rel="stylesheet" href="contactUs.css">
+</head>
+<body>
+        <header>
+            <div class="header-left">
+                <div class="logo">
+                    <img src="images/settlit-logo.png" alt="settleit logo" id="settlit-logo">
+                    Settlit
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="/frontend/homepage.html">Home</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="contact">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you. Please use the form below to get in touch with us.</p>
+                <form action="https://formsubmit.co/settlit.co@gmail.com" method="post">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/frontend/thankyou.html">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+        
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="icons">
+                    <a href="" id="facebook"></a>
+                    <a href="" id="twitter"></a>
+                    <a href="" id="instagram"></a>
+            </div>
+            Copyright 2023 Settlit, Inc | All Rights Reserved   
+        </footer>
+
+</body>
+</html>
