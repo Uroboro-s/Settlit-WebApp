@@ -1,0 +1,81 @@
+/* Reset some default styles for cross-browser consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add a background image or color to the body */
+body {
+    background: #f0f0f0; /* You can replace this with an actual background image */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header with a background color, centered text, and padding */
+header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Style the blog title */
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Style the main content area with padding and a max-width */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style individual blog posts */
+article {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+/* Style the blog post title */
+article h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+/* Style the blog post date */
+.date {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0;
+}
+
+/* Style the paragraph text within the blog posts */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Style the links within blog posts */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
