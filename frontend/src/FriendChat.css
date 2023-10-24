@@ -220,7 +220,7 @@ main {
 
 }
 
-.db-content{
+.fc-content{
     padding: 2rem 3rem;
     width: 83%;
     background:
@@ -236,123 +236,244 @@ main {
     justify-content:space-evenly;
 }
 
-.db-main-box{
-    /* width: 90%; */
-    background-color: #FFFEF2;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+.fc-main-outer-box{
+  width: 75rem;
+  height: 38rem;
 
-    display: flex;
-    justify-content:space-evenly;
+  border: 1px solid #00000033;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px 3px #16151b55;
+
+  background: #e2e8f0e3;
+
+}
+.fc-header-profile{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.db-money-list{
-    width: 50vw;
-    background: #FFFDDF;
-    border-radius: 10px 1px 1px 10px ;
+.fc-backSpace-key{
+  padding-bottom: 15px;
 
+  position: relative;
+  right: 100px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    align-items: center;
+  cursor: pointer;
+
+  font-size: 76px;
+  font-weight: 900;
 }
 
-.db-innerbox-flex{
-
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
+.fc-friend-name{
+  font-size: 46px;
+  font-weight: 500;
 }
 
-.db-pie-chart{
-    width: 20vw;
-    height: 50vh;
+.fc-more-option{
+  color: #000;
 
-    margin-top: 10%;
+  font-family: Gabriela;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.6%;
+}
+.dot{
+  padding-top: 2px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+  position: relative;
+  bottom: 15px;
+  left: 50px;
+
+  cursor: pointer;
+}
+.fc-line{
+
+  width: 1120px;
+  height: 1px;
+
+  position: relative;
+  left: 35px;
+  bottom: 25px;
+}
+.main-chat-area{
+  width: 25rem;
+  height: 15rem;
+  margin-left: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.db-money-innerbox{
-    width: 20vw;
-    height: 50vh;
-    margin: 50px;
-
-    background: #c0c6c05d;
-    border-radius: 5px;
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px; */
-
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    align-items: center;
+.main-chat-area-right{
+  position: relative ;
+  left: 39.5rem;
 }
 
-.db-get-name{
-    padding-top: 2px;
-    padding-bottom: 5px 1px 1px 5px;
-
-    color: #706e6e;
-    font-size: 32px;
-    font-weight: 600;
-}
- 
-
-.db-give-name{
-    padding-top: 2px;
-    padding-bottom: 5px;
-
-    color: #706e6e;
-    font-size: 32px;
-    font-weight: 600;
+.fc-img-username-right{
+  position: relative ;
+  left: 25.5rem;
 }
 
+.fc-img{
+  position: relative;
+  bottom: 40px;
 
-.db-moneylist{
-    width: 20vw;
-    height: 40vh;
-    padding-top: 20px;
+  background: #a2c2eb;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #00000041;
+  border-radius: 50px;
+}
 
-    border-top: 2px solid #000000;
+.fc-username{
+  position: relative;
+  bottom: 40px;
 
-    overflow: auto;
+  font-size: 14px;
+}
 
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
+.fc-inner-chat-area{
+  border-radius: 10px;
+  background: #99a7b9d8;
+  width: 20rem;
+  height: 9.3rem;
+  border: 1px solid #00000041;
+}
+
+.fc-tag-name{
+  text-align: center;
+  font-size: 36px;
+}
+
+.fc-first-user{
+  margin-top: 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fc-second-user{
+  margin-top: 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pending{
+  outline: none;
+  border: none;
+
+  width: 100px;
+  height: 30px;
+
+  border-radius: 10px;
+  font-size: 18px;
+
+  cursor: pointer;
+  color: #FFFEF2;
+  background: #c63d3d;
+  transition: all ease 1s;
+}
+
+.pending:active{
+  scale: 0.9;
+}
+
+.fc-chat-container{
+  height: 68%;
+  overflow: auto;
+  width: 100%;
 }
 
 
 
-.db-get-name-list{
-    padding: 10px;
+.request-area{
+  position: relative;
+  top: 1rem;
+  left: 9rem;
 
-    font-size: 24px;
+  outline: none;
+  width: 40rem;
+  height: 3rem;
+  padding-left: 15px;
+  font-size: 24px;
+  color: #090909;
+
+  background-color: #c7cdd6d8;
+  border: 1px solid rgba(0, 0, 0, 0.264);
+  border-radius: 15px;
 }
 
-.db-get-money{
-    padding-left: 80px;
-    margin-top: 5px;
+.fc-request-button{
+  width: 9rem;
+  height: 2.8rem;
+  font-size: 24px;
 
-    color: #393939;
-    font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.195);
+  color: floralwhite;
+  background-color: #071629be;
+
+  position: relative;
+  left: 250px;
+  top: 1rem;
 }
 
 
-.db-give-name-list{
-    padding: 10px;
+ /* modal of navbar */
 
-    font-size: 24px;
-}
+ .fc-modal-window{
 
-.db-give-money{
-    padding-left: 80px;
-    margin-top: 5px;
+  position: relative;
+  bottom: 33.5rem;
+  left: 55.5rem;
 
-    color: #393939;
-    font-size: 16px;
-}
+  width: 12rem;
+  height: 6.5rem;
+
+  background-color: #223652be;
+  scale: 0;
+
+  border: 1px solid black;
+  border-radius: 5px;
+ }
+
+ .fc-info{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  
+  cursor: pointer;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  color: #071629;
+ }
+
+ .fc-leave-option{
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  cursor: pointer;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  color: #a14b45;
+ }
+
+ .fc-modal-line{
+  background: #000;
+ }
+
+ .fc-modal-window-scale{
+  scale: 1;
+ }

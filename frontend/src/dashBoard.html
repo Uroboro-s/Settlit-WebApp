@@ -6,6 +6,8 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="dashBoard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Rouge Script' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -59,90 +61,94 @@
         <div class="db-content">
             <div class="db-main-box">
                 <div class="db-money-list">
-                    
-                    <div class="db-money-innerbox">
-                        <div class="db-get-name">To get </div>
-                        <div class="db-moneylist">
-                            <ul >
-                                <li class="db-get-name-list">Friend 1
-                                    <ul>
-                                        <li class="db-get-money" >to get 100</li>
-                                    </ul>
-                                </li>
-                                <li class="db-get-name-list">Group 1
-                                    <ul>
-                                        <li class="db-get-money" >to get 200 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-get-name-list">Group 1
-                                    <ul>
-                                        <li class="db-get-money" >to get 200 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-get-name-list">Group 1
-                                    <ul>
-                                        <li class="db-get-money" >to get 200 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-get-name-list">Group 1
-                                    <ul>
-                                        <li class="db-get-money" >to get 200 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-get-name-list" >Friend 2
-                                    <ul>
-                                        <li class="db-get-money" >to get 300 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-get-name-list" >Group 5
-                                    <ul>
-                                        <li class="db-get-money" >to get 500 </li>
-                                    </ul>
-                                </li>
-                              </ul> 
+                        <div class="db-innerbox-animation">
+                            <span class="text-animation"></span>
                         </div>
-                    </div>
-                    <div class="db-money-innerbox">
-                        <div class="db-give-name">To give</div>
-                        <div class="db-moneylist">
-                            <ul>
-                                <li class="db-give-name-list">Group 4
-                                    <ul>
-                                        <li class="db-give-money" >to give 200 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-give-name-list" >Friend 3
-                                    <ul>
-                                        <li class="db-give-money" >to give 300 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-give-name-list" >Friend 
-                                    <ul>
-                                        <li class="db-give-money" >to give 200 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-give-name-list" >Friend 
-                                    <ul>
-                                        <li class="db-give-money" >to give 100 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-give-name-list" >Friend 
-                                    <ul>
-                                        <li class="db-give-money" >to give 500 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-give-name-list" >Friend 
-                                    <ul>
-                                        <li class="db-give-money" >to give 500 </li>
-                                    </ul>
-                                </li>
-                                <li class="db-give-name-list" >Friend 
-                                    <ul>
-                                        <li class="db-give-money" >to give 500 </li>
-                                    </ul>
-                                </li>
-                                
-                            </ul> 
+                        <div class="db-innerbox-flex">
+                        <div class="db-money-innerbox">
+                            <div class="db-get-name">To get </div>
+                            <div class="db-moneylist">
+                                <ul >
+                                    <li class="db-get-name-list">Friend 1
+                                        <ul>
+                                            <li class="db-get-money" >to get 100</li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-get-name-list">Group 1
+                                        <ul>
+                                            <li class="db-get-money" >to get 200 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-get-name-list">Group 1
+                                        <ul>
+                                            <li class="db-get-money" >to get 200 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-get-name-list">Group 1
+                                        <ul>
+                                            <li class="db-get-money" >to get 200 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-get-name-list">Group 1
+                                        <ul>
+                                            <li class="db-get-money" >to get 200 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-get-name-list" >Friend 2
+                                        <ul>
+                                            <li class="db-get-money" >to get 300 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-get-name-list" >Group 5
+                                        <ul>
+                                            <li class="db-get-money" >to get 500 </li>
+                                        </ul>
+                                    </li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="db-money-innerbox">
+                            <div class="db-give-name">To give</div>
+                            <div class="db-moneylist">
+                                <ul>
+                                    <li class="db-give-name-list">Group 4
+                                        <ul>
+                                            <li class="db-give-money" >to give 200 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-give-name-list" >Friend 3
+                                        <ul>
+                                            <li class="db-give-money" >to give 300 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-give-name-list" >Friend 
+                                        <ul>
+                                            <li class="db-give-money" >to give 200 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-give-name-list" >Friend 
+                                        <ul>
+                                            <li class="db-give-money" >to give 100 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-give-name-list" >Friend 
+                                        <ul>
+                                            <li class="db-give-money" >to give 500 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-give-name-list" >Friend 
+                                        <ul>
+                                            <li class="db-give-money" >to give 500 </li>
+                                        </ul>
+                                    </li>
+                                    <li class="db-give-name-list" >Friend 
+                                        <ul>
+                                            <li class="db-give-money" >to give 500 </li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -155,5 +161,6 @@
         </div>
     </main>
     <script src="dbChart.js"></script>
+    <script src="dbAnimation.js"></script>
 </body>
 </html>
