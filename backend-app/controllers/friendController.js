@@ -34,10 +34,14 @@ exports.friendrequest_send_post = asyncHandler(async(req,res,next) =>{
     console.log(friendRequest);
     await friendRequest.save();
 
+    const allRequests = await FriendRequest.find({reciever: currentUserId, status: "Pending"}).populate("sender").exec();
+    console.log(allRequests);
+
     res.render('user-friends-page', {
         title: "My Friends",
         user: currentUser,
         friends_list: allFriends,
+        request_list: allRequests,
     });
 });
 
