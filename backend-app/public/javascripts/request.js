@@ -31,7 +31,7 @@ splitting_modal_popup.addEventListener('click', function() {
     const members = Array.from(document.querySelectorAll('.request-split-equally-amount'));
     const amount_to_split_equally = (amount / (members.length)).toFixed(2);
     members.forEach(output => {
-        output.textContent = amount_to_split_equally;
+        output.setAttribute("value", amount_to_split_equally);
     })
     if(splitting_option_modal_popup.classList.contains('hidden')){
         splitting_option_modal_popup.classList.remove('hidden');
@@ -44,12 +44,40 @@ dismiss.addEventListener('click',function() {
 
 btn_split_equally.addEventListener('click', () =>{
     div_split_by_amount.style.display = 'none';
+
+    const allEqualInputs = document.querySelectorAll('.request-split-equally-amount');
+    console.log(allEqualInputs);
+    const allUnequalInputs = document.querySelectorAll('.request-split-by-amount-input');
+    console.log(allUnequalInputs);
+
+    allEqualInputs.forEach(element => {
+        element.setAttribute("name", "money[]");
+    });
+
+    allUnequalInputs.forEach(element => {
+        element.setAttribute("name", "");
+    });
+
     div_split_equally.style.display = 'flex';
     span_request_main_body_splitting_option_btn.innerHTML = 'equally';
 })
 
 btn_split_by_amount.addEventListener('click', () =>{
     div_split_equally.style.display = 'none';
+
+    const allEqualInputs = document.querySelectorAll('.request-split-equally-amount');
+    console.log(allEqualInputs);
+    const allUnequalInputs = document.querySelectorAll('.request-split-by-amount-input');
+    console.log(allUnequalInputs);
+
+    allEqualInputs.forEach(element => {
+        element.setAttribute("name", "");
+    });
+
+    allUnequalInputs.forEach(element => {
+        element.setAttribute("name", "money[]");
+    });
+
     div_split_by_amount.style.display = 'flex';
     span_request_main_body_splitting_option_btn.innerHTML = 'unequally';
 })

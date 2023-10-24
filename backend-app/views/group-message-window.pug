@@ -98,7 +98,7 @@ block content
             span.dismiss1 x
           .request-main-body
             .request-main-body-hero
-                img.request-main-body-hero-icon(src='images/payment.png' alt='request money icon')
+                img.request-main-body-hero-icon(src='/images/payment.png' alt='request money icon')
                 .request-main-body-hero-form
                   input.request-main-body-hero-form-description(type='text' placeholder='Enter a description' name="subject" required="true")
                   .request-main-body-hero-form-currency-wrap
@@ -127,42 +127,24 @@ block content
             each member in group.members
               .request-split-equally-members
                   .request-split-equally-members-left
-                    img.user-profile-pic(src='images/profile.png' alt='')
+                    img.user-profile-pic(src='/images/profile.png' alt='')
                     span.request-split-equally-name #{member.name}
                   .request-split-equally-members-right
                     span.request-split-equally-currency INR
-                    input.request-split-equally-amount(placeholder="0.00" name="money[]")
-            //- .request-split-equally-members
-            //-     .request-split-equally-members-left
-            //-       img.user-profile-pic(src='images/profile.png' alt='')
-            //-       span.request-split-equally-name Individual 2
-            //-     .request-split-equally-members-right
-            //-       span.request-split-equally-currency INR
-            //-       span.request-split-equally-amount 0.00
-            //- .request-split-equally-members
-            //-     .request-split-equally-members-left
-            //-       img.user-profile-pic(src='images/profile.png' alt='')
-            //-       span.request-split-equally-name Individual 3
-            //-     .request-split-equally-members-right
-            //-       span.request-split-equally-currency INR
-            //-       span.request-split-equally-amount 0.00
+                    input.request-split-equally-amount(type='number' placeholder="0.00" name="money[]")
+
           .request-split-by-amount
             h3 Split unequally
+
             each member in group.members
               .request-split-by-amount-members
                   .request-split-by-amount-members-left
-                    img.user-profile-pic(src='images/profile.png' alt='')
+                    img.user-profile-pic(src='/images/profile.png' alt='')
                     span.request-split-by-amount-name #{member.name}
                   .request-split-by-amount-amount
                     span INR
-                    input.request-split-by-amount-input(type='number' name="money[]" required="true")
-            //- .request-split-by-amount-members
-            //-     .request-split-by-amount-members-left
-            //-       img.user-profile-pic(src='images/profile.png' alt='')
-            //-       span.request-split-by-amount-name Individual 2
-            //-     .request-split-by-amount-amount
-            //-       span INR
-            //-       input.request-split-by-amount-input(type='number')
+                    input.request-split-by-amount-input(type='number' name="" )
+
   
   script(src='/javascripts/request.js')
   script(type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
