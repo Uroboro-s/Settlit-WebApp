@@ -15,11 +15,11 @@ header
     .nav
       ul
         li
-          a(href='') Home
-        li
-          a(href='') About us
+          a(href='') About Us
         li
           a(href='') Blog
+        li
+          a(href='') Contact us
   .header-right
     .notification
       button.notification-svg-box
@@ -47,7 +47,7 @@ header
     script(src="/javascripts/user-layout.js")
 main
   .side-bar
-    a.dashboard-button(href='') 
+    a.dashboard-button(href=`/users/${user.userid}`) 
       img(src="/images/dashboard.png" alt ="" class ="side-bar-icon") 
       | Dashboard
     a.all-expenses-button(href='') 

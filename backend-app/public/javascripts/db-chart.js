@@ -31,9 +31,10 @@ const ctx = document.getElementById('myChart');
         new Chart(ctx, {
           type: 'pie',
           data: {
-            labels: ['Red', 'Blue'],
+            labels: ['Owed to you', 'Owed by you'],
             datasets: [{
               label: ['money '],
+              backgroundColor: ['#4cbb17', '#dc2626'],
               data: [getOwedToYou(), getOwedbyYou()],
               borderWidth: 2
             }]

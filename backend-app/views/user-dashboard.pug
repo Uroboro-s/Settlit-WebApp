@@ -10,24 +10,27 @@ block content
         .db-main-box
             .db-money-list
                 .db-money-innerbox
-                    .db-get-name To get 
+                    .db-get-name Owed to you
                     .db-moneylist
                         ul
-                            if toget_list 
+                            if toget_list.length > 0 
                                 each transaction in toget_list 
                                     li.db-get-name-list #{transaction.reciever.name}
                                         ul 
                                             li.db-get-money #{transaction.amount}
-                            
+                            else 
+                                p No one owes you any money!
                 .db-money-innerbox
-                    .db-give-name To give
+                    .db-give-name Owed by you
                     .db-moneylist
                         ul
-                            if togive_list 
+                            if togive_list.length > 0 
                                 each transaction in togive_list 
                                     li.db-give-name-list #{transaction.sender.name}
                                         ul 
                                             li.db-give-money #{transaction.amount}
+                            else 
+                                p You owe no money!
                         
             .db-pie-chart
                 .db-pie-chart-content

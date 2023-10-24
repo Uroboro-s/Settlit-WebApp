@@ -78,20 +78,91 @@ block content
               ion-icon.icon-send(name='paper-plane-outline')
         button.btn-request
           span.message-box &#x20B9; Request
-    .modal.hidden
-      .modal-group Group Name
-      form.modal-input(method="POST" action=`/users/${user.userid}/groups/group/${group._id}/createmsg`)
-        input.modal-description(type='description--field' placeholder='Description' name="subject" required="true")
+    //- .modal.hidden
+    //-   .modal-group Group Name
+    //-   form.modal-input(method="POST" action=`/users/${user.userid}/groups/group/${group._id}/createmsg`)
+    //-     input.modal-description(type='description--field' placeholder='Description' name="subject" required="true")
         
-        each member in group.members 
-          .modal-individual-input
-            span(for="members") #{member.name} :
-            input.input--field(type="number" placeholder="0" name="money[]")
+    //-     each member in group.members 
+    //-       .modal-individual-input
+    //-         span(for="members") #{member.name} :
+    //-         input.input--field(type="number" placeholder="0" name="money[]")
         
-        button.btn-modal(type = "submit")
-          span.message-box Request
-      button.btn-cancel 
-        span.message-box Cancel
+    //-     button.btn-modal(type = "submit")
+    //-       span.message-box Request
+    //-   button.btn-cancel 
+    //-     span.message-box Cancel
+    form.grps-message.hidden(method="POST" action=`/users/${user.userid}/groups/group/${group._id}/createmsg`)
+      .request-main
+          .request-main-header Add an expense
+            span.dismiss1 x
+          .request-main-body
+            .request-main-body-hero
+                img.request-main-body-hero-icon(src='images/payment.png' alt='request money icon')
+                .request-main-body-hero-form
+                  input.request-main-body-hero-form-description(type='text' placeholder='Enter a description' name="subject" required="true")
+                  .request-main-body-hero-form-currency-wrap
+                      span.currency-code INR
+                      input.request-main-body-hero-form-cost(type='number' placeholder='0.00' min='0')
+          .request-main-body-splitting-option
+              | Paid by you and split 
+              span.request-main-body-splitting-option-btn equally
+              | .
+          .request-main-footer
+            button.cancel-button(type='button')
+                | Cancel
+            button.save-button(type='submit')
+                | Save
+      .request-splitting-options.hidden
+          .request-splitting-options-header Choose split options
+            span.dismiss x
+          .request-splitting-options-buttons
+            button.split-equally-btn(type="button")
+                | =
+            button.split-by-amount-btn(type="button")
+                | 1.23
+          .request-split-equally
+            h3 Split equally
+
+            each member in group.members
+              .request-split-equally-members
+                  .request-split-equally-members-left
+                    img.user-profile-pic(src='images/profile.png' alt='')
+                    span.request-split-equally-name #{member.name}
+                  .request-split-equally-members-right
+                    span.request-split-equally-currency INR
+                    input.request-split-equally-amount(placeholder="0.00" name="money[]")
+            //- .request-split-equally-members
+            //-     .request-split-equally-members-left
+            //-       img.user-profile-pic(src='images/profile.png' alt='')
+            //-       span.request-split-equally-name Individual 2
+            //-     .request-split-equally-members-right
+            //-       span.request-split-equally-currency INR
+            //-       span.request-split-equally-amount 0.00
+            //- .request-split-equally-members
+            //-     .request-split-equally-members-left
+            //-       img.user-profile-pic(src='images/profile.png' alt='')
+            //-       span.request-split-equally-name Individual 3
+            //-     .request-split-equally-members-right
+            //-       span.request-split-equally-currency INR
+            //-       span.request-split-equally-amount 0.00
+          .request-split-by-amount
+            h3 Split unequally
+            each member in group.members
+              .request-split-by-amount-members
+                  .request-split-by-amount-members-left
+                    img.user-profile-pic(src='images/profile.png' alt='')
+                    span.request-split-by-amount-name #{member.name}
+                  .request-split-by-amount-amount
+                    span INR
+                    input.request-split-by-amount-input(type='number' name="money[]" required="true")
+            //- .request-split-by-amount-members
+            //-     .request-split-by-amount-members-left
+            //-       img.user-profile-pic(src='images/profile.png' alt='')
+            //-       span.request-split-by-amount-name Individual 2
+            //-     .request-split-by-amount-amount
+            //-       span INR
+            //-       input.request-split-by-amount-input(type='number')
   
   script(src='/javascripts/request.js')
   script(type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
