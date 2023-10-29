@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const Group = require("../models/group");
-const FriendRequest = require('../models/friendrequest');
-const Transaction = require('../models/transaction');
+const FriendRequest = require("../models/friendrequest");
+const Transaction = require("../models/transaction");
 
 const asyncHandler = require("express-async-handler");
 
@@ -18,16 +18,28 @@ exports.user_get_home = asyncHandler(async (req, res, next) => {
   if (currentUser === null || currentUser.userid !== req.params.user_id) {
     res.send("Unauthorized access");
     return;
-  } */
-  
-  const user = await User.findOne({ userid: req.params.user_id }).populate("notifications").exec();
+  }
+
+  const user = await User.findOne({ userid: req.params.user_id })
+    .populate("notifications")
+    .exec();
   const testUser = await User.populate(user, {
-    path: 'notifications.sender',
-    model: 'User',
+    path: "notifications.sender",
+    model: "User",
   });
-  const transactionOwedByYou = await Transaction.find({reciever: currentUserId, status: "Pending"}).populate('sender').exec();
-  const transactionOwedToYou = await Transaction.find({sender: currentUserId, status: "Pending"}).populate('reciever').exec();
-  
+  const transactionOwedByYou = await Transaction.find({
+    reciever: currentUserId,
+    status: "Pending",
+  })
+    .populate("sender")
+    .exec();
+  const transactionOwedToYou = await Transaction.find({
+    sender: currentUserId,
+    status: "Pending",
+  })
+    .populate("reciever")
+    .exec();
+
   console.log(user);
   //console.log(testUser);
   console.log(user.notifications);
@@ -41,12 +53,13 @@ exports.user_get_home = asyncHandler(async (req, res, next) => {
 
 exports.user_get_myaccount = asyncHandler(async (req, res, next) => {});
 
-
 //GET the groups main page of user
 exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
   const currentUserId = await getUser();
   console.log("again here");
-  const currentUser = await User.findById(currentUserId).populate("notifications").exec();
+  const currentUser = await User.findById(currentUserId)
+    .populate("notifications")
+    .exec();
   if (currentUser === null || currentUser.userid !== req.params.user_id) {
     res.send("Unauthorized access");
     return;
@@ -63,19 +76,25 @@ exports.user_get_mygroups = asyncHandler(async (req, res, next) => {
   });
 });
 
-
 //GET the friends main page of user
 exports.user_get_myfriends = asyncHandler(async (req, res, next) => {
   const currentUserId = await getUser();
-  const currentUser = await User.findById(currentUserId).populate("notifications").exec();
+  const currentUser = await User.findById(currentUserId)
+    .populate("notifications")
+    .exec();
   console.log("jai");
   console.log(currentUserId);
-  const allFriends = await User.find({friends: currentUserId}).exec();
+  const allFriends = await User.find({ friends: currentUserId }).exec();
   console.log(allFriends);
-  const allRequests = await FriendRequest.find({reciever: currentUserId, status: "Pending"}).populate("sender").exec();
+  const allRequests = await FriendRequest.find({
+    reciever: currentUserId,
+    status: "Pending",
+  })
+    .populate("sender")
+    .exec();
   console.log(allRequests);
 
-  res.render('user-friends-page', {
+  res.render("user-friends-page", {
     title: "My Friends",
     user: currentUser,
     friends_list: allFriends,
@@ -83,10 +102,7 @@ exports.user_get_myfriends = asyncHandler(async (req, res, next) => {
   });
 });
 
-
-
 exports.user_get_myindividuals = asyncHandler(async (req, res, next) => {});
-
 
 //Handle log-out request
 exports.user_sign_out = asyncHandler(async (req, res, next) => {
