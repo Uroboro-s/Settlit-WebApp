@@ -6,6 +6,7 @@ const UserSchema = new Schema({
   userid: { type: String, required: true },
   name: { type: String, required: true },
   notifications: [{ type: Schema.Types.ObjectId, ref: "Notification" }],
+  friends: [{type: Schema.Types.ObjectId, ref: "User"}],
 });
 
 UserSchema.virtual("url").get(function () {

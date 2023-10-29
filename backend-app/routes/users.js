@@ -5,8 +5,11 @@ const userController = require("../controllers/userController");
 const groupController = require("../controllers/groupController");
 const messageController = require("../controllers/messageController");
 const transactionController = require("../controllers/transactionController");
+const friendController = require('../controllers/friendController');
 
-/* GET users listing which should'nt be possible*/
+
+
+//GET users listing which should'nt be possible
 router.get("/", function (req, res, next) {
   let message = "404 not found";
   const error = new Error(message);
@@ -29,7 +32,11 @@ router.get("/:user_id/friends", userController.user_get_myfriends);
 //GET the 'My Individuals' page for user
 router.get("/:user_id/individuals", userController.user_get_myindividuals);
 
-//Group Routes below**
+
+
+
+
+//**Group Routes below**
 
 //POST the group-create form
 router.post("/:user_id/groups/group/create", groupController.group_create_post);
@@ -46,12 +53,29 @@ router.post(
   messageController.message_create_post
 );
 
-//Transaction Routes below**
+
+
+
+
+//**Transaction Routes below**
 
 //POST the transaction pay request
-router.post(
-  "/:user_id/transactions/:transaction_id/pay",
-  transactionController.transaction_pay_post
-);
+router.post("/:user_id/transactions/:transaction_id/pay",transactionController.transaction_pay_post);
+
+
+
+
+
+
+//**Friend Routes below**
+
+//POST the friend-request form
+router.post('/:user_id/friends/sendrequest', friendController.friendrequest_send_post);
+
+//POST the friend-request on approval
+router.post('/:user_id/friends/:request_id/approve', friendController.friendrequest_approve_post);
+
+//POST the friend-request on reject
+router.post('/:user_id/friends/:request_id/reject', friendController.friendrequest_reject_post);
 
 module.exports = router;

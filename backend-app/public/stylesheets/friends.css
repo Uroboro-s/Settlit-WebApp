@@ -1,0 +1,342 @@
+
+
+.content {
+    padding: 2rem 3rem;
+    width: 83%;
+    background:
+    conic-gradient(from 0deg at calc(500%/6) calc(100%/3),#86ab84 0 120deg,#0000 0),
+    conic-gradient(from -120deg at calc(100%/6) calc(100%/3),#a0c59d 0 120deg,#0000 0),
+    conic-gradient(from 120deg at calc(100%/3) calc(500%/6),#bfd8bd 0 120deg,#0000 0),
+    conic-gradient(from 120deg at calc(200%/3) calc(500%/6),#bfd8bd 0 120deg,#0000 0),
+    conic-gradient(from -180deg at calc(100%/3) 50%,#a0c59d  60deg,#bfd8bd 0 120deg,#0000 0),
+    conic-gradient(from 60deg at calc(200%/3) 50%,#bfd8bd  60deg,#86ab84 0 120deg,#0000 0),
+    conic-gradient(from -60deg at 50% calc(100%/3),#bfd8bd 120deg,#a0c59d 0 240deg,#86ab84 0);
+    background-size: 229px 132px;
+
+  }
+
+.frnds-list {
+    background-color: white;
+    height: 100%;
+    padding: 1rem 2rem;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+
+}
+
+.frnds-list-content {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   /*  flex-wrap: wrap; */
+    /* justify-content: center; */
+    align-items: center;
+    
+    column-gap: 25px;
+    padding: 20px;
+    overflow: auto;
+}
+
+.frnds-list-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 650px;
+    height: 85px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    transition: all .2s ease-in-out;
+    display: flex;
+
+}
+
+.frnds-list-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.frnds-list-card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: teal;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.frnds-list-card-details {
+    color: #333;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.frnds-list-card-details-name {
+    font-size: 18px;
+    margin: 15px 5px;
+}
+.frnds-list-card-details-status {
+    font-size: 16px;
+    margin: 15px 5px;
+    color: #2ecc71; /* Color indicating online status */
+}
+
+/* .frnds-list-card-details-description {
+    font-size: 14px;
+}
+
+.frnds-list-card-details-members {
+    font-size: 14px;
+    color: #777;
+} */
+.frnds-list span {
+  padding-left: 28px;
+}
+/*this is friend requests modal*/
+.frnds-friend-request-container {
+  position: relative;
+  display: inline-block;
+}
+
+.frnds-request-btn{
+  width: 10rem;
+  height: 2.6rem;
+  margin-left: 160px;
+  font-size: 18px;
+  padding: 6px;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #d4d4d4;
+  cursor: pointer;
+}
+
+.frnds-friend-request-box {
+  background-color: rgba(111, 225, 225, 0.87);
+  position: absolute;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.frnds-request-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 1.2rem;
+  background-color: #ccfbf1;
+}
+
+.username {
+  flex: 1;
+  font-size: 12px;
+}
+
+.accept-button, .reject-button {
+  cursor: pointer;
+  color: white;
+  font-size: x-large;
+  background-color: rgba(255, 255, 255, 0.347);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+.accept-button {
+  color: green;
+}
+.reject-button {
+  color: red;
+}
+
+/* .frnds-friend-request-container:hover .frnds-friend-request-box {
+  display: flex;
+  flex-direction: column;
+} */
+
+
+
+
+
+
+
+.frnds-list-header {
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.search-bar {
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  background-color: #f0f0f0;
+  width: 250px;
+
+}
+
+.frnds-list-search-bar {
+    display: flex;
+    height: 70%;
+    margin-right: 74px;
+    border-radius: 5px;
+}
+
+.search-button {
+    background: lightgray;
+  border: none;
+  cursor: pointer;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frnds-add-button-container {
+    position: absolute;
+    right: 10rem;
+    bottom: 5rem;
+
+}
+.frnds-add-button {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.121);
+    cursor: pointer;
+    font-size: 4rem;
+    background-color: inherit;
+    /* box-shadow: 10px 10px 5px gray, -10px 10px 5px gray; */
+    /* box-shadow: rgba(9, 30, 66, 0.25) 0 8px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px; */
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   /* box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px; */
+    transition: all ease 0.7s;
+}
+.frnds-add-button:hover {
+    scale: 0.90;
+}
+
+
+/*This is modal css*/
+.modal {
+    position: absolute;
+    width: 30rem;
+    /* height: 48rem; */
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f5f9;
+    gap: 2rem;
+    align-items: center;
+    /* justify-content: space-between; */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0px 0px 5rem rgba(0, 0, 0, 0.5);
+  }
+  .hidden {
+    display: none;
+  }
+  .modal-addfriend {
+    height: 4rem;
+    font-size: 2.4rem;
+    padding-top: 15px;
+    font-weight: 500;
+}
+  
+  .modal-userid {
+    width: 100%;
+    background-color: #3b4d67;
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 2rem;
+    height: 4rem;
+    border-radius: 1rem;
+    transition: all ease 2s;
+  }
+
+  .modal-userid:hover{
+    scale: .98;
+  }
+  
+  .modal-input {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .modal-individual-input {
+    display: flex;
+    height: 4rem;
+    gap: 3rem;
+  }
+  
+  .input--field {
+    font-size: 1.6rem;
+    text-align: center;
+    border: none;
+    background-color: #f8fafc;
+    border-radius: 5rem;
+  }
+  .button-box {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .btn-modal {
+    width: 6rem;
+    height: 3rem;
+
+    cursor: pointer;
+    background-color: #1c3556;
+    color: #f8fafc;
+
+    padding: .5rem;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    transition: all ease .7s;
+    /* align-self: center; */
+  }
+ .btn-modal:hover{
+    background-color: #03142b;
+ }
+  .btn-modal:active {
+    scale: 0.9;
+  }
+
+  .btn-cancel {
+    width: 6rem;
+    height: 3rem;
+    cursor: pointer;
+    background-color: #1c3556;
+    color: #f8fafc;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    transition: all ease .7s;
+  }
+
+  .btn-cancel:hover{
+    background-color: #03142b;
+ }
+  .btn-cancel:active {
+    scale: 0.9;
+  }
+
+  .frnds-error-msg {
+    color: red;
+  }
+
+
+
+
+

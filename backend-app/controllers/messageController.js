@@ -16,12 +16,14 @@ exports.message_create_post = asyncHandler(async (req, res, next) => {
 
   const transactions = [];
   let i = 0;
+
   for (const money of req.body["money[]"]) {
+    console.log(money);
     if (money === "0") {
       i++;
       continue;
     }
-    //console.log(group.members[i]._id);
+    console.log(group.members[i]._id);
     const transaction = new Transaction({
       sender: currentUserID,
       reciever: group.members[i]._id,
@@ -30,7 +32,6 @@ exports.message_create_post = asyncHandler(async (req, res, next) => {
         ? "Successful"
         : "Pending",
     });
-    console.log(transaction);
 
     transactions.push(transaction);
     i++;
